@@ -199,7 +199,7 @@ canvas
     z-index: 2;
     border-top:  solid 3em black;
     border-bottom:  solid 3em black;
-
+    z-index: 999999999;
 
 }
 

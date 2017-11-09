@@ -38,12 +38,7 @@ var lastFrame = 0;
 var score=0;
 
 var start=false;
-if (Modernizr.touch === true) {
 
-  start=true;
-  handleDoubleClick;
-
-}
 var enemiesX;
 var enemiesY;
 var enemiesRandom;
@@ -122,6 +117,9 @@ window.onload = function( )
 	end=document.querySelector('#end');
 
 
+
+
+
 	background = new AnimationFond(imageBackground,0,0);
 
 	arrierePlan = new AnimationFond(imageMontagne,0.1,0);
@@ -133,9 +131,6 @@ window.onload = function( )
 	evenenemt=	new EvenenementScore();
 	collision=new Colision();
 	enemiesRandom = new Ball();
-
-
-
 
 
 
@@ -163,6 +158,8 @@ function render()
 
 	if (start)
 	{
+    if (Modernizr.touch === true){
+    }
 
 		player1 = document.querySelector('#audioPlayer');
 
@@ -208,11 +205,25 @@ function render()
 	{
 		ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(the_back, 0,0,canvas.width, canvas.height);
+    var el=document.getElementById('full')
+    el.addEventListener("click",fullscreen)
 
       $('.commencer').click(function(){
+        setTimeout(function () {
           start=true;
           $(this).hide();
+        }, 1000);
+
       })
+      function fullscreen(){
+
+                 if(canvas.webkitRequestFullScreen) {
+                     canvas.webkitRequestFullScreen();
+                 }
+                else {
+                   canvas.mozRequestFullScreen();
+                }
+      }
 	}
 
 
@@ -248,7 +259,6 @@ EvenenementScore = function(event)
 			if (Math.floor(tempEcoule)%1000===0 && Math.floor(tempEcoule)>0)
 
 			{
-				console.log('event')
 					var effectscore =document.querySelector('#effectscore');
 					effectscore.loop = false;
 					effectscore.play();
@@ -490,7 +500,6 @@ Enemies=function()
 				Math.floor(distance3) < circle1.radius + circle4.radius)
 			{
 			// collision d�tect�e !
-				console.log('colision')
 				start=false;
         new PerduScreen();
 				effectrire.play();
@@ -546,7 +555,6 @@ CollisionHelper =function()
 	this.active = function (event)
 	{
 		this.isActive=true;
-		console.log('active');
 
 
 
@@ -555,7 +563,6 @@ CollisionHelper =function()
 	this.desactive = function(event)
 	{
 		this.isActive=false;
-		console.log('nohelp')
 
 
 	}
@@ -623,25 +630,4 @@ Ball=function()
 	}
 
 
-}
-
-function handleDoubleClick(event) {
-  var isInFullScreen = (document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen);
-  if(!isInFullScreen) {
-    if (canvas.requestFullscreen) {
-      canvas.requestFullscreen();
-    } else if (canvas.mozRequestFullScreen) {
-      canvas.mozRequestFullScreen();
-    } else if (canvas.webkitRequestFullscreen) {
-      canvas.webkitRequestFullscreen();
-    }
-  } else {
-    if(document.cancelFullScreen) {
-      document.cancelFullScreen();
-    } else if(document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if(document.webkitCancelFullScreen) {
-      document.webkitCancelFullScreen();
-    }
-  }
 }
