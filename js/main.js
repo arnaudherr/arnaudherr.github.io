@@ -374,7 +374,7 @@ $('svg.polylion').click(function(){
       setTimeout(function () {
         $('.loader').hide();
         $.ajax({
-       url: "/experience/",
+       url: "/experience",
        success: function (data) {
 
            $("body").append(data);
