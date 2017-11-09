@@ -212,6 +212,7 @@ function render()
 		ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(the_back, 0,0,canvas.width, canvas.height);
     var el=document.getElementById('full')
+
     el.addEventListener("click",fullscreen)
 
       $('.commencer').click(function(){
@@ -222,13 +223,16 @@ function render()
 
       })
       function fullscreen(){
+              if (Modernizr.touch===true){
+                if (canvas.requestFullScreen) {
+  canvas.requestFullScreen();
+} else if (canvas.mozRequestFullScreen) {
+  canvas.mozRequestFullScreen();
+} else if (canvas.webkitRequestFullScreen) {
+  canvas.webkitRequestFullScreen();
+}
+              }
 
-                 if(canvas.webkitRequestFullScreen) {
-                     canvas.webkitRequestFullScreen();
-                 }
-                else {
-                   canvas.mozRequestFullScreen();
-                }
       }
 	}
 
