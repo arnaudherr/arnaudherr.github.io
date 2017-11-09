@@ -38,7 +38,12 @@ var lastFrame = 0;
 var score=0;
 
 var start=false;
+if (Modernizr.touch === true) {
 
+  start=true;
+  handleDoubleClick;
+
+}
 var enemiesX;
 var enemiesY;
 var enemiesRandom;
@@ -322,7 +327,7 @@ Jauge =function (vitesse,img,contain)
 	contain.addEventListener("mousedown", this.activeted.bind(this));
 	contain.addEventListener("mouseup",this.desactived.bind(this));
   if (Modernizr.touch === true) {
-  
+
     contain.addEventListener("touchstart", this.activeted.bind(this));
   	contain.addEventListener("touchend",this.desactived.bind(this));
 }
@@ -618,4 +623,25 @@ Ball=function()
 	}
 
 
+}
+
+function handleDoubleClick(event) {
+  var isInFullScreen = (document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen);
+  if(!isInFullScreen) {
+    if (canvas.requestFullscreen) {
+      canvas.requestFullscreen();
+    } else if (canvas.mozRequestFullScreen) {
+      canvas.mozRequestFullScreen();
+    } else if (canvas.webkitRequestFullscreen) {
+      canvas.webkitRequestFullscreen();
+    }
+  } else {
+    if(document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if(document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if(document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
+  }
 }
