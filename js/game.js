@@ -321,6 +321,11 @@ Jauge =function (vitesse,img,contain)
 
 	contain.addEventListener("mousedown", this.activeted.bind(this));
 	contain.addEventListener("mouseup",this.desactived.bind(this));
+  if (Modernizr.touch === true) {
+  
+    contain.addEventListener("touchstart", this.activeted.bind(this));
+  	contain.addEventListener("touchend",this.desactived.bind(this));
+}
 
 	this.update= function(delta)
 	{
