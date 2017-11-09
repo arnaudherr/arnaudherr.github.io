@@ -454,10 +454,10 @@ $('.1').click(function(){
     $('#section1').fadeOut()
     $('.wave').addClass('animate');
     $('body').addClass('fullBody');
-    var audio = new Audio('sound/clap.mp3');
-    var sax = new Audio('sound/piano.mp3');
-    var kick = new Audio('sound/bass.mp3');
-    var harpe = new Audio('sound/harpe.mp3');
+  //  var audio = new Audio('sound/clap.mp3');
+  //  var sax = new Audio('sound/piano.mp3');
+  //  var kick = new Audio('sound/bass.mp3');
+  //  var harpe = new Audio('sound/harpe.mp3');
 
 
 
