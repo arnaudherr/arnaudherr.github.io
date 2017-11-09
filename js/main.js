@@ -282,17 +282,22 @@ $('html, body').animate({
 
 $('.project li a').click(function(e){
   e.preventDefault();
+  $('body').prepend('<div class="transitor"></div>');
+
   var url = $(this).attr("href");
   $.ajax({
        url: url,
        type: 'GET',
        dataType: 'html',
        success: function(data){
-         $('body').append('<div class="transitor"></div>');
+         history.replaceState('data to be passed', 'Title of the page', url);
+
          $('.transitor').addClass('transitor__begin');
          setTimeout(function () {
-
-           $('.transitor').addClass('transitor__ended');
+           $('body').children().fadeOut();
+           $('.transitor').removeClass('transitor__begin');
+           $('body').append(data);
+           
 
          }, 800);
        }

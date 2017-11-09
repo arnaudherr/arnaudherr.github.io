@@ -1173,6 +1173,9 @@ polygon {
   position: fixed;
   background-color: #00ffc9;
   z-index: 999999;
+  opacity: 0;
+  top: 0;
+  transition: all .4s ease-in-out;
 
 }
 
@@ -1181,10 +1184,8 @@ polygon {
 
 
 .transitor__begin{
-  -webkit-animation: opacityN .4s forwards; /* Safari 4+ */
-  -moz-animation:    opacityN .4s forwards; /* Fx 5+ */
-  -o-animation:      opacityN .4s forwards; /* Opera 12+ */
-  animation:         opacityN .4s forwards; /* IE 10+, Fx 29+ */
+  opacity: 1;
+  top: 0;
 
 }
 
@@ -1218,6 +1219,8 @@ polygon {
   -moz-animation:    opacityE .4s forwards; /* Fx 5+ */
   -o-animation:      opacityE .4s forwards; /* Opera 12+ */
   animation:         opacityE .4s forwards; /* IE 10+, Fx 29+ */
+  top:0;
+  opacity: 1;
 
 
 }
