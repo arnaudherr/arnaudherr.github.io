@@ -40,7 +40,7 @@ collections:
     permalink: /:title/
   paperstripexperience:
       output: true
-      permalink: /:name/
+      permalink: /:title/
 
 defaults:
   -
