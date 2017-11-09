@@ -37,10 +37,10 @@ collections:
     output: true
     permalink: /Work/:title/
   posts:
-    permalink: /:title/
+    permalink: Work/:title/
   paperstripexperience:
       output: true
-      permalink: /:title/
+      permalink: paperstrip-experience/:title/
 
 defaults:
   -

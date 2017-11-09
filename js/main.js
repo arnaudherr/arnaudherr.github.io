@@ -297,7 +297,7 @@ $('.project li a').click(function(e){
            $('body').children().fadeOut();
            $('.transitor').removeClass('transitor__begin');
            $('body').append(data);
-           
+
 
          }, 800);
        }
@@ -381,6 +381,10 @@ $('svg.polylion').click(function(){
        url: "/experience.html",
        success: function (data) {
          $('.loader').hide();
+         $('body').css('background-color','#FAFAFA');
+
+         history.replaceState('data to be passed', 'Title of the page', '/experience');
+
            $("body").append(data);
 
        }
