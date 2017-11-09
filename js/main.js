@@ -372,11 +372,10 @@ $('svg.polylion').click(function(){
 
       $('body').append('<div class="loader"></div>')
       setTimeout(function () {
-        $('.loader').hide();
         $.ajax({
        url: "/experience.html",
        success: function (data) {
-
+         $('.loader').hide();
            $("body").append(data);
 
        }
