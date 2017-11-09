@@ -133,8 +133,14 @@ window.onload = function( )
 	enemiesRandom = new Ball();
 
 
+if (Modernizr.touch===true){
+  perso =new Jauge(1,personnage,document.body);
 
-	perso =new Jauge(2,personnage,document.body);
+}
+else {
+  perso =new Jauge(2,personnage,document.body);
+
+}
 
 	lastTime = Date.now();
 	rendering = setInterval( render , 1);
