@@ -43,7 +43,7 @@ collections:
     permalink: /work/:title/
   paperstripexperience:
       output: true
-      permalink: paperstrip-experience/:title/
+      permalink: /paperstrip-experience/:title/
 
 defaults:
   -
