@@ -75,6 +75,7 @@ var collisionHelper;
 var player1;
 var player2;
 
+var the_back;
 
 var circleOsUp;
 var circleOsDown;
@@ -108,6 +109,7 @@ window.onload = function( )
 	imageAvantPlan= document.getElementById("avant");
 	imageMontagne= document.getElementById("montagne");
 	imageBackground= document.getElementById("background");
+  the_back=document.getElementById("the_back");
 	os=document.getElementById("os");
 	catBall=document.getElementById("catball");
 
@@ -199,7 +201,9 @@ function render()
 	}
 	else
 	{
-		//ctx.clearRect(0,0,canvas.width,canvas.height);
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(the_back, 0,0,canvas.width, canvas.height);
+
       $('.commencer').click(function(){
           start=true;
           $(this).hide();
@@ -401,14 +405,14 @@ Jauge =function (vitesse,img,contain)
 PerduScreen =function()
 {
 
-	//ctx.clearRect(0,0,canvas.width,canvas.height);
+	ctx.clearRect(0,0,canvas.width,canvas.height);
 	ctx.save()
 	//ctx.clearRect(0,0,canvas.width,canvas.height);
 
 	ctx.fillRect(canvas.width/2-20,canvas.height/2-120,520,300);
 
 	ctx.font ="100px Arial";
-			ctx.fillStyle="#95bdcd";
+	ctx.fillStyle="#95bdcd";
 
 	ctx.fillText(perdu , canvas.width/2 , canvas.height/2 );
 	ctx.fillText(timer,canvas.width/2 , 550 );

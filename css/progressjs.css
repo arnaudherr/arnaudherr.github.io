@@ -182,11 +182,10 @@
 .centeredElement
 {
     margin: 0 auto;
-    max-width:70%;
+    max-width:800px;
+    margin-top: 4em;
     text-align:center;
-    -webkit-box-shadow: 0px 0px 61px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 61px 0px rgba(0,0,0,0.75);
-     box-shadow: 0px 0px 61px 0px rgba(0,0,0,0.75);
+
 }
 
 
@@ -284,26 +283,32 @@ body
     position: fixed;
     left: 0;
     right: 0;
-    top: 24vh;
+    bottom: 10vh;
     margin: 0 auto;
-    width: 300px;
+    width: 200px;
     display: inline-block;
     background: #00fdc7;
     text-transform: uppercase;
     border-radius: 5px;
+    font-size: .7rem;
+    font-weight: lighter;
+    font-family: 'roboto',sans-serif;
 }
 
 .recommencer{
   position: fixed;
   left: 0;
   right: 0;
-  top: 24vh;
+  bottom: 10vh;
   margin: 0 auto;
-  width: 300px;
+  width: 200px;
   display: inline-block;
   background: #00fdc7;
   text-transform: uppercase;
   border-radius: 5px;
+  font-size: .7rem;
+  font-weight: lighter;
+  font-family: 'roboto',sans-serif;
 }
 .commencer:hover{
     cursor: pointer;
