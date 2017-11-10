@@ -267,7 +267,11 @@ svg {
     -o-transition: all .6s ease-in-out;
     transition: all .6s ease-in-out;
 }
-
+@media all and (max-width:550px){
+  .wave{
+    top:0;
+  }
+}
 .it {
   -webkit-transition: all .6s ease-in-out;
   -o-transition: all .6s ease-in-out;
@@ -657,6 +661,11 @@ svg {
     width: 100%;
     display: block;
 }
+@media all and (max-width:800px){
+  .profil_pic img {
+    margin-bottom: 2em;
+  }
+}
 .about h1 span {
     font-weight: 100;
     margin-bottom: 2em;
@@ -746,6 +755,7 @@ svg {
 @media all and (max-width: 550px) {
     .container_2 svg {
         margin: 0 auto;
+        margin-top: -5em;
         -webkit-transform: scale(.9);
             -ms-transform: scale(.9);
                 transform: scale(.9);
