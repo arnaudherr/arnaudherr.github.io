@@ -39,6 +39,7 @@ collections:
   posts:
     permalink: /work/:title/
   paperstripexperience:
+      output: true
       permalink: /experience/:title/
 
 defaults:
