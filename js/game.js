@@ -134,7 +134,7 @@ window.onload = function( )
 
 
 if (Modernizr.touch===true){
-  perso =new Jauge(1,personnage,document.body);
+  perso =new Jauge(1.5,personnage,document.body);
 
 }
 else {
@@ -216,9 +216,10 @@ function render()
     el.addEventListener("click",fullscreen)
 
       $('.commencer').click(function(){
+        $(this).hide();
+
         setTimeout(function () {
           start=true;
-          $(this).hide();
         }, 1000);
 
       })
