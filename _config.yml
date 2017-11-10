@@ -61,4 +61,10 @@ defaults:
       type: details
     values:
       layout: "default"
-  
+  -
+
+    scope:
+      path: ""
+      type: paperstripexperience
+    values:
+      layout: "default"
