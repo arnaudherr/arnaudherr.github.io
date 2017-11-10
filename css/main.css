@@ -1199,6 +1199,9 @@ polygon {
     padding: 10%;
 
   }
+  .project__wrapper h1 {
+    padding-top: 2em;
+  }
 
 
 }
