@@ -41,7 +41,7 @@ collections:
     permalink: /:title/
   paperstripexperience:
       output: true
-      permalink: /experience/:title/
+      permalink: /:title/
 
 defaults:
   -
