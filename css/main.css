@@ -768,6 +768,15 @@ polygon {
 .polylion:nth-child(2) {
     display: none;
 }
+.polylion{
+  transition: all .2s ease-in-out;
+}
+.polylion:hover{
+  -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+          transform: translateY(-10px);
+          cursor: crosshair;
+}
 .animate {
     -webkit-transform: scale(10);
         -ms-transform: scale(10);

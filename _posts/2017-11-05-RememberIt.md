@@ -15,7 +15,7 @@ img: /img/rememberit.jpg
 
   </video>
     <a target="blank" href="https://rememberit.be"><img src="/img/icone_it.png"></a>
-    <p> Ce project à été méné dans le cadre d'un travail de fin d'étude à l'Institut des Arts de Diffusion. Claire Lacroix et moi même avont travaillé deux ans sur cette web app affin d'obtenir à la fin de nos études un MVP déja bien avancé.</p>
+    <p>Ce project à été mené dans le cadre d'un travail de fin d'étude à l'Institut des Arts de Diffusion. Claire Lacroix et moi même avons travaillé deux ans sur cette web app afin d'obtenir à la fin de nos études un MVP déjà bien avancé.</p>
 </div>
 <div class="project__container rememberit_mockup">
     <ul class="specificite">
