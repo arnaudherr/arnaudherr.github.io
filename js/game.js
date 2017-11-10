@@ -134,7 +134,7 @@ window.onload = function( )
 
 
 if (Modernizr.touch===true){
-  perso =new Jauge(1.5,personnage,document.body);
+  perso =new Jauge(2.5,personnage,document.body);
 
 }
 else {
