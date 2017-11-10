@@ -33,8 +33,6 @@ sass:
 
   # collections
 collections:
-  arnaudherr.github.io:
-    output: true
   portfolio:
     output: true
     permalink: /Work/:title/

@@ -4,7 +4,7 @@ page_title: Experience
 ---
 <div class="experience__container">
   <h1>Paperstrip Experience</h1>
-{% assign sortedAllExp = (site.paperstripexperience | sort: 'date')  %}
+{% assign sortedAllExp = site.paperstripexperience  %}
            {% for item in sortedAllExp %}
            {%if forloop.first%}
            <ul class="experience__liste">

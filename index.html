@@ -96,18 +96,14 @@ page_title: Home
             <div class="about__title rotate">
                <h2>What about me?</h2>
                <p>Hi, my name is Arnaud Herr and I am a young Web Designer & Developer based in Belgium. I love crafting beautiful web pages in HTML5, CSS3 and JavaScript or jQuery. My other skills include Photoshop, Illustrator, Sketch.</p>
-                {% assign details__page = (site.details) %}
-                {% for item in sortedAllPost %}
-                <h1>{{item.url}}</h1>
-                <a href="{{ item.url }}"><button class="btn btn-1 btn-1c">Read More</button></a>
 
-                {% endfor %}
+                <a href=""><button class="btn btn-1 btn-1c">Read More</button></a>
             </div>
             <div class="profil_pic"><img src="img/profil.png" alt=""></div>
          </div>
          <div class=" big__container clearfix ">
            <img class="project__title" src="img/project.png" alt="Projects">
-           {% assign sortedAllPost = (site.posts | sort: 'date')  %}
+           {% assign sortedAllPost = site.posts | sort:"date" %}
            {% for item in sortedAllPost %}
            {%if forloop.first%}
            <ul class="project" id="project">

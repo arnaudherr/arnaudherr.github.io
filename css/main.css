@@ -262,7 +262,7 @@ svg {
     margin: 0;
     padding: 0;
     max-width: 1024px;
-    min-width: 330px;
+    min-width: 580px;
     -webkit-transition: all .6s ease-in-out;
     -o-transition: all .6s ease-in-out;
     transition: all .6s ease-in-out;
@@ -477,10 +477,10 @@ svg {
     margin-top: 10em;
 }
 
-@media all and (max-width:550px){
+@media all and (max-width:800px){
   .project__title {
       margin-top: 5em;
-      margin-left: 0;
+      margin-left: 10%;
   }
 }
 .project {
@@ -491,6 +491,7 @@ svg {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+
     overflow: hidden;
     margin-top: 3em;
     padding: 10em 0;
@@ -669,6 +670,7 @@ svg {
 @media all and (max-width: 550px) {
     .about h1 {
         font-size: 13px;
+        line-height: 1;
     }
     .about h1 span {
         font-size: 20px;
@@ -724,6 +726,11 @@ svg {
     background: url(../img/bck_trim.jpg) no-repeat fixed;
     background-size: cover;
 }
+@media all and (max-width:800px){
+  .fadein {
+      background-attachment: scroll;
+  }
+}
 .container_2 {
     width: 100%;
     margin-top: -10em;
@@ -739,9 +746,9 @@ svg {
 @media all and (max-width: 550px) {
     .container_2 svg {
         margin: 0 auto;
-        -webkit-transform: scale(.6);
-            -ms-transform: scale(.6);
-                transform: scale(.6);
+        -webkit-transform: scale(.9);
+            -ms-transform: scale(.9);
+                transform: scale(.9);
     }
 }
 polygon {
@@ -1148,20 +1155,45 @@ polygon {
   padding-bottom: 2em;
 }
 .project__container p {
-  width: 50%;
   margin: 0 auto;
-  margin-top:2em;
   font-family: 'roboto', sans-serif;
   font-weight: 100;
   font-size: 20px;
-  padding-bottom: 2em;
-  margin-top: 8em;
   color:#2E3B4B;
+  text-align: center;
+}
+.project__container{
+  width: 100%;
+  padding: 20%;
+  box-sizing: border-box;
+}
+@media all and (max-width:800px){
+  .project__container  {
+    padding: 20%;
+
+  }
+  .project__wrapper p {
+    width: 80%;
+
+  }
+  .project__wrapper {
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+   }
+
 }
 
-.project__container{
-  height: 50vh;
+@media all and (max-width:500px){
+  .project__container  {
+    padding: 10%;
+
+  }
+
+
 }
+
+
 .project li:hover {
   transform: translateY(-10px);
   z-index: 2;
@@ -1324,4 +1356,21 @@ polygon {
   font-weight: 800;
   text-align: center;
   letter-spacing: -2px;
+}
+
+.rememberit_mockup{
+  background: url('../img/rememmberit_mockup_iphone.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.rememberit_mockup img {
+  width: 50%;
+}
+
+.rememberit_mockup p {
+  width: 100%;
 }
