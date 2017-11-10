@@ -39,7 +39,6 @@ collections:
   posts:
     permalink: /work/:title/
   paperstripexperience:
-      output: true
       permalink: /experience/:title/
 
 defaults:
@@ -62,10 +61,4 @@ defaults:
       type: details
     values:
       layout: "default"
-  -
-
-    scope:
-      path: ""
-      type: paperstripexperience
-    values:
-      layout: "default"
+  
