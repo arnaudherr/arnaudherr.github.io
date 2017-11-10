@@ -140,6 +140,13 @@ video {
   box-sizing: border-box;
   z-index: 9999;
   clear: both;
+  margin: 0 auto;
+  text-align: center;
+}
+.hamburguer img {
+  width: 10px;
+  text-align: center;
+
 }
 
 .hamburguer span{
