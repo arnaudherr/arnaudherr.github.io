@@ -35,9 +35,9 @@ sass:
 collections:
   portfolio:
     output: true
-    permalink: /Work/:title/
+    permalink: /:title/
   posts:
-    permalink: /work/:title/
+    permalink: /:title/
   paperstripexperience:
       output: true
       permalink: /experience/:title/
