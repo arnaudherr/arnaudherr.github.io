@@ -1353,12 +1353,10 @@ polygon {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .experience__liste--item{
   width: 100%;
-  height: 200px;
   overflow: hidden;
   margin: 0;
   padding: 0;

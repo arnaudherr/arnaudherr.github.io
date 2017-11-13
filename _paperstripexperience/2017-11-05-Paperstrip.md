@@ -2,7 +2,7 @@
 layout: experience_temp
 title: Paperstrip
 project_year: 2016
-img: /img/underthesea.jpg
+img: /img/paperstrip.jpg
 ---
 
 <script>
