@@ -261,8 +261,7 @@ $(window).scroll(function(){
 });
 
 
-	$('nav ul li a ').click(function(e) {
-		e.preventDefault();
+	$('nav ul li a ').click(function() {
 var url = $(this).attr("href")
 console.log(url);
 $('nav').fadeToggle(600);
@@ -297,6 +296,8 @@ $('.project li a').click(function(e){
            $('body').children().fadeOut();
            $('.transitor').removeClass('transitor__begin');
            $('body').append(data);
+           window.scrollTo(0, 0);
+
 
 
          }, 800);
