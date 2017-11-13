@@ -134,11 +134,11 @@ window.onload = function( )
 
 
 if (Modernizr.touch===true){
-  perso =new Jauge(4,personnage,document.body);
+  perso =new Jauge(1.8,personnage,document.body);
 
 }
 else {
-  perso =new Jauge(2,personnage,document.body);
+  perso =new Jauge(1.8,personnage,document.body);
 
 }
 
@@ -220,7 +220,7 @@ function render()
 
         setTimeout(function () {
           start=true;
-        }, 1000);
+        }, 3000);
 
       })
       function fullscreen(){
@@ -435,6 +435,17 @@ Jauge =function (vitesse,img,contain)
 
 PerduScreen =function()
 {
+  function removeFullScreen(){
+    if (canvas.exitFullscreen) {
+                canvas.exitFullscreen();
+            } else if (canvas.webkitExitFullscreen) {
+                canvas.webkitExitFullscreen();
+            } else if (canvas.mozCancelFullScreen) {
+                canvas.mozCancelFullScreen();
+            } else if (canvas.msExitFullscreen) {
+                canvas.msExitFullscreen();
+            }
+  }
 
 	ctx.clearRect(0,0,canvas.width,canvas.height);
 	ctx.save()
@@ -450,6 +461,7 @@ PerduScreen =function()
 	player1.pause();
 	player1.currentTime = 0;
 	delta=0;
+  removeFullScreen();
   $('.centeredElement').append('<div class="recommencer"><h1>Recommencer?</h1></div>');
   $('.recommencer').click(function(){
     location.reload();
@@ -468,7 +480,7 @@ Enemies=function()
 	this.x = canvas.width;
 	this.life = 0;
 	this.maxLife = 1000;
-	this.speed=-0.4 ;
+	this.speed=-0.3 ;
 
 	mesBalles.push( this );
 

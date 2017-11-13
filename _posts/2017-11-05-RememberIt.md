@@ -15,11 +15,11 @@ img: /img/rememberit.jpg
 
   </video>
     <a target="blank" href="https://rememberit.be"><img src="/img/icone_it.png"></a>
-    <p>Ce projet à été mené dans le cadre d'un travail de fin d'étude à l'Institut des Arts de Diffusion. Claire Lacroix et moi-même avons travaillé deux ans sur cette web app afin d'obtenir à la fin de nos études un MVP déjà bien avancé.</p>
+    <p>Ce projet à été mené dans le cadre d'un travail de fin d'études à l'Institut des Arts de Diffusion. Claire Lacroix et moi-même avons travaillé deux ans sur cette web app afin d'obtenir à la fin de nos études un MVP déjà bien avancé.</p>
 </div>
 <div class="project__container rememberit_mockup">
     <ul class="specificite">
-    <li>Créez un album seul ou à plusieurs et partagez le</li>
+    <li>Créez un album seul ou à plusieurs et partagez-le</li>
     <li>Un tri et une rotation des photos 100% automatisés.</li>
     <li>Un affichage par date de prise de vue, par personne ou par géolocalisation.</li>
     <li>Un systeme de notification</li>
