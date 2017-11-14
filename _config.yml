@@ -19,6 +19,10 @@ description:  This is a description for my website
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "arnaudherr.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
+# This will require each of these plugins automatically.
+
+
+
 
 # Build settings
 markdown: kramdown

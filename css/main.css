@@ -301,14 +301,12 @@ svg {
   transition: all .6s ease-in-out;
 
 }
-@media all and {} #wave_full {
-    -webkit-transform: translateX(14em);
-        -ms-transform: translateX(14em);
-            transform: translateX(14em);
+#wave_full {
+  opacity: 0;
 }
 .anime_waveFull {
-    -webkit-animation: showFromLeft .4s ease-in-out forwards;
-            animation: showFromLeft .4s ease-in-out forwards;
+    -webkit-animation: showFromLeft .4s  .2s ease-in-out forwards;
+            animation: showFromLeft .4s .2s ease-in-out forwards;
 }
 #wave_border {
     stroke-dasharray: 10000;
@@ -318,14 +316,13 @@ svg {
 }
 @-webkit-keyframes showFromLeft {
     to {
-        -webkit-transform: translateX(0);
-                transform: translateX(0);
+        opacity: 1;
     }
 }
 @keyframes showFromLeft {
     to {
-        -webkit-transform: translateX(0);
-                transform: translateX(0);
+      opacity: 1;
+
     }
 }
 @-webkit-keyframes dash {
@@ -1142,7 +1139,10 @@ polygon {
   margin: 0 auto;
   text-align: center;
 }
-
+.project_content{
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
 .poly{
 
 
@@ -1302,6 +1302,10 @@ polygon {
   text-align: center;
   color: #2E3B4B;
   background: #FAFAFA;
+
+      -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
 
 }
 
@@ -1529,6 +1533,9 @@ polygon {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #2E3B4B;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
 
 }
 .container__cv--right h1{
