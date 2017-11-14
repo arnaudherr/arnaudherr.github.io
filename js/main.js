@@ -281,7 +281,7 @@ $('html, body').animate({
 
 $('.project li a').click(function(e){
   e.preventDefault();
-  $('body').prepend('<div class="transitor"></div>');
+
 
   var url = $(this).attr("href");
   $.ajax({
@@ -289,13 +289,23 @@ $('.project li a').click(function(e){
        type: 'GET',
        dataType: 'html',
        success: function(data){
-         history.replaceState('data to be passed', 'Title of the page', url);
+         $('body').prepend('<div class="loader"></div>');
+         $('body').prepend('<div class="transitor"></div>');
+         $('body').addClass('fullBody');
 
+         $('body').children().not('.transitor,.loader').fadeOut();
+
+         history.replaceState('data to be passed', 'Title of the page', url);
          $('.transitor').addClass('transitor__begin');
          setTimeout(function () {
-           $('body').children().fadeOut();
-           $('.transitor').removeClass('transitor__begin');
            $('body').append(data);
+           $('body').removeClass('fullBody');
+
+             $('.transitor').addClass('transitor__ended');
+             $('.loader').remove();
+
+
+
            window.scrollTo(0, 0);
 
 
@@ -371,6 +381,7 @@ $('svg.polylion').click(function(){
 
   setTimeout(function () {
     $('body').css('background-color','#00ffc9');
+    $('body').addClass('fullBody');
 
     setTimeout(function () {
       $('body').children().remove();
@@ -380,10 +391,11 @@ $('svg.polylion').click(function(){
         $.ajax({
        url: "/experience.html",
        success: function (data) {
-         $('.loader').hide();
+         $('.loader').remove();
          $('body').css('background-color','#FAFAFA');
 
          history.replaceState('data to be passed', 'Title of the page', '/experience');
+         $('body').removeClass('fullBody');
 
            $("body").append(data);
 
@@ -462,7 +474,6 @@ $('.1').click(function(){
     $('.container_2').fadeOut();
     $('#section1').fadeOut()
     $('.wave').addClass('animate');
-    $('body').addClass('fullBody');
   //  var audio = new Audio('sound/clap.mp3');
   //  var sax = new Audio('sound/piano.mp3');
   //  var kick = new Audio('sound/bass.mp3');
@@ -486,7 +497,6 @@ callToSoundCloud()
                 $('.active').addClass('reading');
                   $('.button .active').each(function() {
                   $(this).find('*').addClass('reading');
-                  console.log('lol')
                 });
 
               }
