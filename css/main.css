@@ -309,8 +309,8 @@ svg {
             animation: showFromLeft .4s .2s ease-in-out forwards;
 }
 #wave_border {
-    stroke-dasharray: 10000;
-    stroke-dashoffset: 10000;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
     -webkit-animation: dash 10s ease-in-out forwards;
             animation: dash 10s ease-in-out forwards;
 }
