@@ -511,10 +511,10 @@ svg {
             transform: translateY(-3em);
 }
 .project__title {
-    margin-left: 5%;
-    width: 50%;
-    max-width: 450px;
-    min-width: 100px;
+  margin-left: 5%;
+  width: 50%;
+  max-width: 400px;
+  min-width: 100px;
     float: left ;
     margin-top: 10em;
 }
