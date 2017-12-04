@@ -1381,7 +1381,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-size: cover;
   position: relative;
   overflow: hidden;
-  background: rgba(0, 224, 177, 0.90);
+  background: rgba(0, 255, 201, 0.90);
 }
 .back_red{
   background-repeat: no-repeat;
