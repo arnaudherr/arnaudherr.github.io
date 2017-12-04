@@ -7,7 +7,7 @@ img: /img/polysea.jpg
 
 <div class="project_content">
 <div class="project__wrapper poly">
-    <h1>Apparences-magazine</h1><p>Site web en cours de développement</p>
+    <h1>Apparences-magazine</h1><p>Le guide de la chirurgie et de la médecine esthétique, de la beauté et du bien-être.</p>
 </div>
 <div class="project__container back_black">
   <video autoplay loop id="video-background" muted plays-inline>
@@ -15,7 +15,7 @@ img: /img/polysea.jpg
 
   </video>
     <a target="blank" href="https://hde-prod.be"><img src="/img/hde_logo.png"></a>
-    <p>Ce projet de type "portfolio" pour la société HDE-prod a été réalisé avec WordPress. Le site a pour principe de promouvoir le travail de la société en y publiant des photos, des vidéos et bientôt des prises de vues aérienne avec drône.</p>
+    <p>Dans chaque numéro, un dossier spécial, le best of des soins experts et des nouvelles technologies anti-âge, antirides, pour rajeunir avec ou sans chirurgie esthétique. Des reportages, des testés pour vous. Sans oublier les pages de mode, les restos et les dossiers « Voyage » dans les îles lointaines ou dans les stations de sports d’hiver…</p>
 </div>
 <div class="project__container mockup__apparences">
     <ul class="specificite">
