@@ -8,8 +8,6 @@ img: /img/polysea.jpg
 <div class="project__wrapper poly">
     <h1>Apparences-magazine</h1><p>Site web en cours de développement</p>
 </div>
-
-
 <div class="project__container back_black">
   <video autoplay loop id="video-background" muted plays-inline>
       <source src="http://hde-prod.be/wp-content/uploads/2017/04/reel-v3.mov" type="video/mp4">
