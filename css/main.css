@@ -1444,7 +1444,6 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 .mockup__apparences img{
   width: 50%;
   margin: 0;
-  margin-top: 2em;
 }
 @media all and (max-width:800px){
   .rememberit_mockup{
@@ -1462,8 +1461,11 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   .mockup__apparences{
 
     -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+  .mockup__apparences {
 
-        flex-wrap: wrap-reverse;
+    margin-bottom: 2em;
   }
   .mockup__apparences img{
     width: 100%;
