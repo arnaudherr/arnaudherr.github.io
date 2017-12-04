@@ -1398,6 +1398,12 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background:rgba(50, 50, 50, .9);
 }
 
+.back_black img {
+  max-width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .rememberit_mockup{
 
   display: -webkit-box;
