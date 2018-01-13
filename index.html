@@ -102,6 +102,9 @@ Moi c'est Arnaud Herr, je suis un Web designer & developer fraichement sorti des
             <div class="profil_pic"><img src="img/profil.png" alt=""></div>
          </div>
          <div class=" big__container clearfix ">
+          <canvas id="canvas"></canvas>
+         </div>
+         <div class=" big__container clearfix ">
            <img class="project__title" src="img/project.png" alt="Projects">
            {% assign sortedAllPost = site.posts | sort:"date" %}
            {% for item in sortedAllPost %}
