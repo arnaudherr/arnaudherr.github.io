@@ -126,7 +126,7 @@ class CircleContainer {
         this.context = context;
         this.position = {x, y};
 
-        this.numberOfCircles = 8;
+        this.numberOfCircles = 12;
         this.circles = [];
 
         this.baseRadius = 100;
@@ -207,7 +207,7 @@ class Circle {
      * @return void
      */
     render(context) {
-        context.fillStyle = "hsl(167, 100%, "+this.size * 4+"%)";
+        context.fillStyle = "hsl(10, 100%, "+this.size * 4+"%)";
         context.beginPath();
         context.arc(this.position.x, this.position.y, this.size, 0, TWO_PI);
         context.fill();
@@ -219,7 +219,7 @@ class Circle {
  */
 window.onload = function () {
     //Create a new instance of the application
-    new Application();
+    var app=new Application();
 
 };
 
