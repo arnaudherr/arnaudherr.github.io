@@ -219,6 +219,7 @@ class Circle {
  */
 window.onload = function () {
     //Create a new instance of the application
+    new Application();
 
 };
 
