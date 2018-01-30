@@ -240,15 +240,64 @@ nav ul li{
 nav ul li a{
   color: white;
   text-decoration: none;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+
 }
 
 
-nav ul li a:hover{
+nav ul li a::before {
+    content: attr(data-letters);
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    color: #2E3B4B;
+    white-space: nowrap;
+    width: 0%;
+    -webkit-transition: width 0.4s 0.2s;
+    transition: width 0.4s 0.2s;
+}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 100%;
+    top: 50%;
+    margin-top: -8px;
+    right: 0;
+    background: #FFFFFF;
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
 
-  font-family: 'Libre Barcode 39 Text', cursive;
 
-  cursor: crosshair;
 
+
+nav ul li a:hover {
+	color: #FFFFFF;
+  transform: scale(2);
+}
+
+
+nav ul li a:hover::after {
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+}
+
+
+nav ul li a:hover::before {
+	width: 100%;
 }
 .show_nav{
   -webkit-transform: translateY(0);
@@ -533,6 +582,7 @@ svg {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
 
     overflow: hidden;
     margin-top: 3em;
@@ -540,7 +590,8 @@ svg {
 }
 
 .project li {
-  width: 33.333%;
+  width: 100%;
+  max-width: 33.333%;
 }
 .project a {
   text-decoration: none;
@@ -561,6 +612,10 @@ svg {
   .project{
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+  .project li {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -586,15 +641,7 @@ svg {
     margin: 0;
     padding: 0;
 }
-.project li:nth-child(1) {
-    width: 100%;
-}
-.project li:nth-child(2) {
-    width: 100%;
-}
-.project li:nth-child(3) {
-    width: 100%;
-}
+
 .project__title h1 {
     -webkit-writing-mode: tb;
         -ms-writing-mode: tb;
@@ -1776,4 +1823,168 @@ text-align: center;
   .social__network img {
     margin: 0 auto;
   }
+}
+
+.colorDot{
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin: 0 auto;
+
+    margin-left: 1em;
+}
+.colorDot::after{
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: 10px;
+  top: 10px;
+  content: attr(data-color);
+  padding-top: 12px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  color: black;
+  background: #FAFAFA50;
+  vertical-align: middle;
+  font-size: 10px;
+  transform: scale(0);
+  transition: all .2s ease-in-out;
+  line-height: 1;
+}
+
+.colorDot:hover::after{
+  transform: scale(1);
+}
+
+
+.colorDot:last-child{
+  margin-left: 0;
+}
+
+
+.container__charte--color{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  text-align: center;
+
+
+}
+.container__charte{
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.container__charte h1 {
+  font-weight: 900;
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+  margin-top: 2em;
+  color: #2E3B4B;
+
+  vertical-align: center;
+  line-height: .8;
+  letter-spacing: -4px;
+}
+
+.container__charte p {
+  width: 100%;
+
+    font-weight: 400;
+      font-size: 10px;
+      text-transform: uppercase;
+      line-height: 0;
+      letter-spacing: 4px;
+      color: #2E3B4B;
+      text-align: left;
+}
+.container__charte svg {
+  width: 50px;
+  margin-right: 1em
+
+
+}
+.intro__section{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8em;
+  margin-bottom: 4em;
+  align-items: center;
+
+}
+.intro__section::after{
+  display: block;
+  content: "";
+  width: 100px;
+  height: 1px;
+  background: #2E3B4B;
+}
+.container__charte img {
+  width: 100%;
+  display: block;
+  margin-top: 4em;
+}
+.container__charte h2{
+  width: 100%;
+
+    font-weight: 400;
+      font-size: 10px;
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: 4px;
+      color: #2E3B4B;
+      text-align: left;
+
+}
+
+.container__font{
+  display: flex;
+  align-items: center;
+}
+@media all and (max-width:850px){
+
+  .container__font{
+    display: block;
+  }
+}
+.container__font div {
+  margin: 0 auto;
+}
+
+.container__font--mountain h1{
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  font-style: normal;
+
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1em;
+
+}
+.container__font--mountain p{
+  width: 100%;
+  font-weight: 400;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2em;
+    margin-top: 4em;
+    vertical-align: center;
+    line-height: 1;
+    letter-spacing: 4px;
+    color: #2E3B4B;
+    text-decoration: underline;
+
+}
+
+.container__font div:last-child  h1{
+
+
+  font-family: 'Lora', serif;
+  color: black;
 }

@@ -1,0 +1,18 @@
+---
+layout: default
+page_title: Lab
+---
+<div class="big__container">
+  <h1>The Lab</h1>
+{% assign sortedAllLab = site.labprojects %}
+           {% for item in sortedAllLab %}
+           {%if forloop.first%}
+           <ul class="project">
+              {%endif%}
+                <li class="showProject"><a href="{{item.url}}"><img src="{{item.img}}"></a></li>
+
+              {%if forloop.last%}
+           </ul>
+           {%endif%}
+           {% endfor %}
+</div>

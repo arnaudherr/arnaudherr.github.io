@@ -46,6 +46,9 @@ collections:
   paperstripexperience:
       output: true
       permalink: /:title/
+  labprojects:
+      output: true
+      permalink: /:title/
 
 defaults:
   -
@@ -72,5 +75,13 @@ defaults:
     scope:
       path: ""
       type: paperstripexperience
+    values:
+      layout: "default"
+
+  -
+
+    scope:
+      path: ""
+      type: labprojects
     values:
       layout: "default"
