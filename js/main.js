@@ -290,28 +290,89 @@ $('.project li a').click(function(e){
        type: 'GET',
        dataType: 'html',
        success: function(data){
-         $('body').prepend('<div class="loader"></div>');
-         $('body').prepend('<div class="transitor"></div>');
+         $('.transitor').show();
+         $('body').children().not('.transitor').delay(400).fadeOut(800);
+
          $('body').addClass('fullBody');
 
-         $('body').children().not('.transitor,.loader').fadeOut();
+         var tmax_opts = {
+         delay: 0,
+         repeat: 0,
+         repeatDelay: 0,
+         yoyo: false
+         };
+
+         var tmax_tl           = new TimelineMax(tmax_opts),
+           polylion_shapes   = $('.transit > polygon'),
+           polylion_stagger  = 0.00475,
+           polylion_duration = 1.8;
+
+         var polylion_staggerFrom = {
+         scale: 0,
+         opacity: 0,
+         transformOrigin: 'center center',
+         };
+
+         var polylion_staggerTo = {
+         opacity: 1,
+         scale: 1,
+         ease: Elastic.easeInOut
+         };
+
+
+
+
+         tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
+
 
          history.replaceState('data to be passed', 'Title of the page', url);
-         $('.transitor').addClass('transitor__begin');
          setTimeout(function () {
-           $('body').append(data);
+           $('body').children().not('.transitor').remove();
+
+          $('body').append(data);
+
            $('body').removeClass('fullBody');
+           var tmax_opts = {
+           delay: 0,
+           repeat: 0,
+           repeatDelay: 0,
+           yoyo: false
+           };
 
-             $('.transitor').addClass('transitor__ended');
-             $('.loader').remove();
+           var tmax_tl           = new TimelineMax(tmax_opts),
+             polylion_shapes   = $('.transit > polygon'),
+             polylion_stagger  = 0.00475,
+             polylion_duration = 1.8;
 
+           var polylion_staggerFrom = {
+           scale: 1,
+           opacity: 1,
+           transformOrigin: 'center center',
+           };
+
+           var polylion_staggerTo = {
+           opacity: 0,
+           scale: 0,
+           ease: Elastic.easeInOut
+           };
+
+
+
+
+          tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
+
+             setTimeout(function () {
+              $('.transitor').hide();
+               $('body').delay(200).fadeIn(800);
+
+             }, 800);
 
 
            window.scrollTo(0, 0);
 
 
 
-         }, 800);
+         }, 2000);
        }
 })
 
@@ -387,7 +448,6 @@ $('svg.polylion').click(function(){
     setTimeout(function () {
       $('body').children().remove();
 
-      $('body').append('<div class="loader"></div>')
       setTimeout(function () {
         $.ajax({
        url: "/experience.html",

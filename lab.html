@@ -4,7 +4,7 @@ page_title: Lab
 ---
 <div class="big__container experience__container">
   <h1>The Lab</h1>
-{% assign sortedAllLab = site.labprojects %}
+{% assign sortedAllLab = (site.labprojects | sort: 'date') | reverse % %}
            {% for item in sortedAllLab %}
            {%if forloop.first%}
            <ul class="project">
