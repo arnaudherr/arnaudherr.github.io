@@ -91,7 +91,6 @@ var cssAnimations = (function() {
     init: initiate
   };
 })();
-cssAnimations.init();
 
 $('.hamburguer').click(function() {
 	$('nav').fadeToggle(600);
