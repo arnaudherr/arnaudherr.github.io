@@ -102,6 +102,7 @@ transition: 1s opacity;
     top: 10px;
     line-height: 0;
     left: 20px;
+    font-size: 48px;
     font-size: 3rem;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
@@ -150,6 +151,7 @@ transition: 1s opacity;
   margin: 0px;
   margin-top: 10px;
   left: 20px;
+  font-size: 32px;
   font-size: 2rem;
   color: #2E3B4B;
 }
@@ -220,9 +222,11 @@ nav ul {
 nav ul li{
   display: block;
   height:25%;
+  font-size: 32px;
   font-size: 2rem;
   font-weight:800;
   letter-spacing: 10px;
+  margin-bottom: 80px;
   margin-bottom:5rem ;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -611,6 +615,7 @@ svg {
 
 .project p {
   margin-top: -2em;
+  font-size: 16px;
   font-size: 1rem;
   color: white;
   font-weight: 800;
@@ -901,6 +906,7 @@ polygon {
  text-transform:uppercase;
  letter-spacing:4px;
  font-weight:lighter;
+ font-size: 12.8px;
  font-size:.8rem;
 }
 
@@ -1006,6 +1012,7 @@ polygon {
 .project p {
   margin-top: -2em;
   margin-bottom: 2em;
+  font-size: 48px;
   font-size: 3rem;
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -1023,6 +1030,7 @@ polygon {
 .rememberit{
 
 
+  background: url('../img/rememberit_bck.png');
   background: url('../img/rememberit_bck.png');
   background-size: 90%;
   background-repeat: no-repeat;
@@ -1063,6 +1071,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   text-align: center;
   letter-spacing: -4px;
   font-weight: 800;
+  font-size: 64px;
   font-size: 4rem;
   padding-top: 4em;
   line-height: .8;
@@ -1286,6 +1295,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
 .experience__liste--item p {
   margin-top: -4em;
+  font-size: 32px;
   font-size: 2rem;
   color: white;
   font-weight: 800;
@@ -1621,6 +1631,7 @@ text-align: center;
 
 .footer__container h1{
   text-decoration: underline;
+  font-size: 48px;
   font-size: 3rem;
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -1890,6 +1901,7 @@ text-align: center;
   color: black;
   font-style: normal;
 
+  font-size: 64px;
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 1em;
@@ -1902,6 +1914,7 @@ text-align: center;
   color: black;
   font-style: normal;
 
+  font-size: 64px;
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 1em;
@@ -1916,6 +1929,7 @@ text-align: center;
   color: black;
   font-style: normal;
 
+  font-size: 64px;
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 1em;
