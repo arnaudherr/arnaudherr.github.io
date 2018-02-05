@@ -197,12 +197,7 @@ $('.hamburguer').click(function(){
 
 
 })
-$('nav ul li a:last-of-type').click(function(e) {
-  e.preventDefault();
-  $('nav').show();
-  var url = $(this).attr("href")
-  loadDynamic(url);
-})
+
 
 $('nav ul li a').click(function() {
 var url = $(this).attr("href")
