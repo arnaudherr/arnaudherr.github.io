@@ -1,3 +1,189 @@
+var cssAnimations = (function () {
+
+  'use strict';
+
+  // instantiate config variables
+  var scrollInterval,
+      animationClass,
+      animationActiveClass,
+      animatedElements,
+      delayedElements;
+
+  // initiate
+  var initiate = function () {
+
+    // cut the mustard test
+    if ( ! _cutTheMustard() ) {
+      return;
+    }
+
+    // populate config variables
+    scrollInterval = 200; //miliseconds
+    animationClass = "js-animate";
+    animationActiveClass = "js-animate--active";
+    animatedElements = document.querySelectorAll("[data-animation='animated']");
+    delayedElements = document.querySelectorAll("[data-animation-delay]");
+
+    // add inline styles for delayed elements
+    _addDelays(delayedElements);
+
+    // add animation classes
+    _addAnimationClasses(animatedElements);
+
+    // run animations for elements in viewport upon page load
+    window.addEventListener('load', _runAnimations(animatedElements), false);
+
+    // throttle scroll event
+    var throttledScroll = _throttle( function(){ _runAnimations(animatedElements) }, scrollInterval);
+    window.addEventListener('scroll', throttledScroll, false);
+
+  };
+
+  // cust the mustard test
+  var _cutTheMustard = function () {
+
+    return ( 'querySelector' in document &&
+             'addEventListener' in window &&
+             'classList' in document.createElement('div') );
+
+  };
+
+  // add animations classes
+  var _addAnimationClasses = function (elements) {
+
+    for (var i = 0; i < elements.length; i++) {
+      var el = elements[i];
+
+      // add base animation class
+      el.classList.add(animationClass);
+
+      // add modifier class for animation type
+      var animationTypeClass = "js-animate--" + el.getAttribute('data-animation-type');
+      el.classList.add(animationTypeClass);
+    }
+
+  };
+
+
+  // put animations in "running" mode
+  // uses animation-play-state: running;
+  var _runAnimations = function (elements) {
+
+    for (var i = 0; i < elements.length; i++) {
+
+      var el = elements[i];
+
+      if ( _isInViewport(el) && !el.classList.contains(animationActiveClass) ) {
+        el.classList.add(animationActiveClass);
+      }
+    }
+
+  };
+
+
+  // add delay styles in html
+  var _addDelays = function(elements) {
+
+    for (var i = 0; i < elements.length; i++) {
+
+      var el = elements[i];
+      var delay = el.getAttribute('data-animation-delay');
+
+      // vendor prefixes shenanigans
+      var vendorPrefixes = [
+        'WebkitAnimationDelay',
+        'animationDelay'
+      ];
+
+      // applying vendor prefixes
+      for (var j=0; j<vendorPrefixes.length; j++) {
+        el.style[ vendorPrefixes[j] ] = delay;
+      }
+    }
+  };
+
+  // detect if element in viewport
+  var _isInViewport = function (el) {
+
+    var rect = el.getBoundingClientRect();
+
+    // just checking top and bottom
+    //
+    // if you want animations to start before they are fully in the viewport
+    // multiply rect-bottom by 0.9 or so
+    // or use things like (rect.bottom - (rect.height / 2))
+
+    return ( rect.top >= 0 &&
+             (rect.bottom - rect.height) <= (window.innerHeight || document.documentElement.clientHeight) );
+
+  };
+
+  // debounce function
+  // doesn't execute function again until after threshold has been reached (group events)
+  // https://ict.ken.be/javascript-debounce-vs-throttle-function
+  var _debounce = function (func, threshold) {
+
+    var timer = null;
+
+    return function () {
+
+      var context = this, args = arguments;
+      clearTimeout(timer);
+
+      timer = setTimeout(function () {
+        func.apply(context, args);
+      }, threshold);
+
+    };
+
+  };
+
+  // throttle function
+  // diminishes the frequency of function execution using a certain threshold (regulates frequency)
+  // https://ict.ken.be/javascript-debounce-vs-throttle-function
+  var _throttle = function (func, threshold, scope) {
+
+    threshold || (threshold = 250);
+
+    var last, deferTimer;
+
+    return function () {
+
+      var context = scope || this;
+      var now = +new Date, args = arguments;
+      if (last && now < last + threshold) {
+
+        // hold on to it
+        clearTimeout(deferTimer);
+        deferTimer = setTimeout(function () {
+          last = now;
+          func.apply(context, args);
+        }, threshold);
+
+      } else {
+
+        last = now;
+        func.apply(context, args);
+
+      }
+
+    };
+
+  };
+
+  return {
+
+    init:initiate
+
+  };
+
+})();
+
+cssAnimations.init();
+
+
+
+
 $('.hamburguer').click(function(){
 
     $('nav').fadeToggle(600);
@@ -11,6 +197,30 @@ $('.hamburguer').click(function(){
 
 
 })
+$('nav ul li a:last-of-type').click(function(e) {
+  e.preventDefault();
+  $('nav').show();
+  var url = $(this).attr("href")
+  loadDynamic(url);
+})
+
+$('nav ul li a').click(function() {
+var url = $(this).attr("href")
+console.log(url);
+$('nav').fadeToggle(600);
+$('.hamburguer span').toggleClass('showBurger')
+$('nav ul li').each(function(i) {
+var elm=$(this);
+setTimeout(function() {
+  elm.toggleClass('show_nav');
+}, i * 100);
+});
+$('html, body').animate({
+scrollTop: $(url).offset().top
+}, 800);
+
+});
+
 
 
 /**
@@ -226,65 +436,8 @@ window.onload = function () {
 
 
 
+function loadDynamic(url){
 
- var slicePosition = $('.profil_pic').offset();
- var slicePosition2 = $('.about__title').offset();
- var slicePosition3 = $('.project').offset();
-
-
- var slicePosition2 = $('.project').offset();
-
- var thirdPosition = $('.about').offset();
- var portfolioPosition = $('.portfolio').offset();
-
-
-
-
-$(window).scroll(function(){
-
-          if($(window).scrollTop() > slicePosition.top-400){
-            $('.profil_pic').addClass('showImage');
-            $('.about__title').addClass('show__title');
-
-            }
-          if($(window).scrollTop() > slicePosition3.top-450){
-            $('.project li').each(function(i){
-                var row = $(this);
-                 setTimeout(function() {
-                 row.addClass('showProject');
-               }, 200*i);
-                })
-
-          }
-
-
-
-});
-
-
-	$('nav ul li a ').click(function() {
-var url = $(this).attr("href")
-console.log(url);
-$('nav').fadeToggle(600);
-$('.hamburguer span').toggleClass('showBurger')
-$('nav ul li').each(function(i) {
-var elm=$(this);
-setTimeout(function() {
-    elm.toggleClass('show_nav');
-}, i * 100);
-});
-$('html, body').animate({
- scrollTop: $(url).offset().top
-}, 800);
-
-});
-
-
-$('.project li a').click(function(e){
-  e.preventDefault();
-
-
-  var url = $(this).attr("href");
   $.ajax({
        url: url,
        type: 'GET',
@@ -328,9 +481,16 @@ $('.project li a').click(function(e){
          history.replaceState('data to be passed', 'Title of the page', url);
          setTimeout(function () {
            $('body').children().not('.transitor').remove();
+           window.scrollTo(0, 0);
 
           $('body').append(data);
+          $('.project li a').click(function(e){
+            e.preventDefault();
+              var url = $(this).attr("href");
+            loadDynamic(url)
 
+
+          })
            $('body').removeClass('fullBody');
            var tmax_opts = {
            delay: 0,
@@ -363,20 +523,31 @@ $('.project li a').click(function(e){
 
              setTimeout(function () {
               $('.transitor').hide();
+              cssAnimations.init();
+
                $('body').delay(200).fadeIn(800);
 
              }, 800);
 
 
-           window.scrollTo(0, 0);
 
 
 
          }, 2000);
        }
 })
+}
+  $('.project li a').click(function(e){
+    e.preventDefault();
+      var url = $(this).attr("href");
+    loadDynamic(url)
 
-})
+
+  })
+
+
+
+
 $( document ).ready(function() {
 
 
@@ -444,9 +615,10 @@ $('svg.polylion').click(function(){
   setTimeout(function () {
     $('body').css('background-color','#00ffc9');
     $('body').addClass('fullBody');
+    $('.transitor').show();
 
     setTimeout(function () {
-      $('body').children().remove();
+      $('body').children().not('.transitor').remove();
 
       setTimeout(function () {
         $.ajax({
@@ -456,9 +628,45 @@ $('svg.polylion').click(function(){
          $('body').css('background-color','#FAFAFA');
 
          history.replaceState('data to be passed', 'Title of the page', '/experience');
-         $('body').removeClass('fullBody');
-
            $("body").append(data);
+           $('body').removeClass('fullBody');
+           var tmax_opts = {
+           delay: 0,
+           repeat: 0,
+           repeatDelay: 0,
+           yoyo: false
+           };
+
+           var tmax_tl           = new TimelineMax(tmax_opts),
+             polylion_shapes   = $('.transit > polygon'),
+             polylion_stagger  = 0.00475,
+             polylion_duration = 1.8;
+
+           var polylion_staggerFrom = {
+           scale: 1,
+           opacity: 1,
+           transformOrigin: 'center center',
+           };
+
+           var polylion_staggerTo = {
+           opacity: 0,
+           scale: 0,
+           ease: Elastic.easeInOut
+           };
+
+
+
+
+          tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
+
+             setTimeout(function () {
+              $('.transitor').hide();
+               $('body').delay(200).fadeIn(800);
+
+             }, 800);
+
+
+           window.scrollTo(0, 0);
 
        }
    });

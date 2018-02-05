@@ -48,7 +48,7 @@ collections:
       permalink: /:title/
   labprojects:
       output: true
-      permalink: /:title/
+      permalink: lab/:title/
 
 defaults:
   -

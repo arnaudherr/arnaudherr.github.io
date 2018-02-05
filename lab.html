@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: experience_temp
 page_title: Lab
 ---
 <div class="big__container experience__container">
@@ -9,7 +9,7 @@ page_title: Lab
            {%if forloop.first%}
            <ul class="project">
               {%endif%}
-                <li class="showProject"><a href="{{item.url}}"><img src="{{item.img}}"></a></li>
+                <li data-animation="animated" data-animation-type="zoomin" data-animation-delay="0.{{ forloop.index }}s" class="showProject"><a href="{{item.url}}"><img src="{{item.img}}"></a></li>
 
               {%if forloop.last%}
            </ul>

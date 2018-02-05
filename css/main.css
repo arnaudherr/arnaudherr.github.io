@@ -551,13 +551,7 @@ svg {
     margin-right: 20%;
     margin-top: 30%;
     text-align: justify;
-    -webkit-transform: translateY(3em);
-        -ms-transform: translateY(3em);
-            transform: translateY(3em);
-    -webkit-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-    opacity: 0;
+
 }
 .show__title {
     opacity: 1;
@@ -565,6 +559,7 @@ svg {
         -ms-transform: translateY(-3em);
             transform: translateY(-3em);
 }
+
 .project__title {
   margin-left: 5%;
   width: 50%;
@@ -625,23 +620,7 @@ svg {
   }
 }
 
-.project li {
-  -webkit-transform: translateY(4em);
-      -ms-transform: translateY(4em);
-          transform: translateY(4em);
-  opacity: 0;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
 
-
-.project li.showProject{
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
-  opacity: 1;
-}
 .project li svg {
     width: 100%;
     margin: 0;
@@ -699,13 +678,6 @@ svg {
 .profil_pic {
     width: 40%;
     float: left;
-    -webkit-transition: all ease-in-out 0.4s;
-    -o-transition: all ease-in-out 0.4s;
-    transition: all ease-in-out 0.4s;
-    -webkit-transform: translateX(10%);
-    -ms-transform: translateX(10%);
-        transform: translateX(10%);
-    opacity: 0;
 }
 @media all and (max-width: 850px) {
     .flex__parent {
@@ -1725,6 +1697,8 @@ text-align: center;
   height: 70px;
   border-radius: 100%;
   margin: 0 auto;
+  margin-top: 1em;
+
   transition: all .2s ease-in-out;
 
 
@@ -1768,6 +1742,7 @@ text-align: center;
   text-align: center;
 
 
+
 }
 .container__charte{
   padding: 1em;
@@ -1785,6 +1760,12 @@ text-align: center;
   vertical-align: center;
   line-height: .8;
   letter-spacing: -4px;
+}
+@media all and (max-width:550px){
+  .container__charte h1 {
+    font-size: 2.3rem;
+    letter-spacing: -2px;
+  }
 }
 
 .container__charte p {
@@ -1837,7 +1818,12 @@ text-align: center;
       text-align: left;
 
 }
-
+.container__animation{
+  width: 100%;
+}
+.container__animation img{
+  width: 100%;
+}
 .container__font{
   display: flex;
   align-items: center;
@@ -1885,6 +1871,16 @@ text-align: center;
   margin-top: 0;
 }
 
+.container__font--cdh h1 {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  font-style: normal;
+
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
 
 
 
@@ -1916,4 +1912,175 @@ text-align: center;
     color: #2E3B4B;
     text-decoration: underline;
 
+}
+
+
+
+/**ANIMATION**/
+
+
+.js-animate
+{
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  opacity: 0;
+
+}
+
+.js-animate--active
+{
+  animation-play-state: running;
+}
+
+/* ---------------------------------------
+slide in from left
+--------------------------------------- */
+@keyframes slideFromLeft {
+
+  0%
+  {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  1%
+  {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100%
+  {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+}
+
+.js-animate--slidefromleft
+{
+  animation-name: slideFromLeft;
+}
+
+/* ---------------------------------------
+slide in from right
+--------------------------------------- */
+@keyframes slideFromRight {
+
+  0%
+  {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  1%
+  {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100%
+  {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+}
+
+.js-animate--slidefromright
+{
+  animation-name: slideFromRight;
+}
+
+/* ---------------------------------------
+slide in from bottom
+--------------------------------------- */
+@keyframes slideFromBottom {
+
+  0%
+  {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  1%
+  {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100%
+  {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+}
+
+.js-animate--slidefrombottom
+{
+  animation-name: slideFromBottom;
+}
+
+/* ---------------------------------------
+slide in from top
+--------------------------------------- */
+@keyframes slideFromTop {
+
+  0%
+  {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  1%
+  {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100%
+  {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+}
+
+.js-animate--slidefromtop
+{
+  animation-name: slideFromTop;
+}
+
+/* ---------------------------------------
+zoom in
+--------------------------------------- */
+@keyframes zoomIn {
+
+  0%
+  {
+    opacity: 0;
+    transform: scale3d(0, 0, 0);
+  }
+
+  1%
+  {
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+  }
+
+  100%
+  {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+
+}
+
+.js-animate--zoomin
+{
+  animation-name: zoomIn;
 }

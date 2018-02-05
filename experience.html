@@ -9,7 +9,7 @@ page_title: Experience
            {%if forloop.first%}
            <ul class="experience__liste">
               {%endif%}
-                <li class="experience__liste--item"><a href="{{item.url}}"><img src="{{item.img}}"></a></li>
+                <li data-animation="animated" data-animation-type="zoomin" data-animation-delay="0.{{ forloop.index }}s" class="experience__liste--item"><a href="{{item.url}}"><img src="{{item.img}}"></a></li>
 
               {%if forloop.last%}
            </ul>
