@@ -127,7 +127,6 @@ function loadDynamic(url) {
 		success: function(data) {
 			$('.transitor').show();
 			$('body').children().not('.transitor').delay(400).fadeOut(800);
-			$('body').addClass('fullBody');
 			var tmax_opts = {
 				delay: 0,
 				repeat: 0,
@@ -159,7 +158,6 @@ function loadDynamic(url) {
 					var url = $(this).attr("href");
 					loadDynamic(url)
 				})
-				$('body').removeClass('fullBody');
 				var tmax_opts = {
 					delay: 0,
 					repeat: 0,
@@ -242,7 +240,6 @@ $(document).ready(function() {
 		tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
 		setTimeout(function() {
 			$('body').css('background-color', '#00ffc9');
-			$('body').addClass('fullBody');
 			$('.transitor').show();
 			setTimeout(function() {
 				$('body').children().not('.transitor').remove();
@@ -254,7 +251,6 @@ $(document).ready(function() {
 							$('body').css('background-color', '#FAFAFA');
 							history.replaceState('data to be passed', 'Title of the page', '/experience');
 							$("body").append(data);
-							$('body').removeClass('fullBody');
 							var tmax_opts = {
 								delay: 0,
 								repeat: 0,
