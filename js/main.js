@@ -182,8 +182,7 @@ function loadDynamic(url) {
 				setTimeout(function() {
 					$('.transitor').hide();
 					cssAnimations.init();
-					$('body').delay(200).fadeIn(800);
-				}, 800);
+				}, 1000);
 			}, 2000);
 		}
 	})
