@@ -45,7 +45,7 @@ var cssAnimations = (function() {
     for (var i = 0; i < elements.length; i++) {
       var el = elements[i];
       var delay = el.getAttribute('data-animation-delay');
-      var vendorPrefixes = ['WebkitAnimationDelay', 'animationDelay'];
+      var vendorPrefixes = ['-webkit-animation-delay', 'animation-delay'];
       for (var j = 0; j < vendorPrefixes.length; j++) {
         el.style[vendorPrefixes[j]] = delay;
       }
