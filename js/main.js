@@ -187,7 +187,13 @@ function loadDynamic(url) {
 				tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
 				setTimeout(function() {
 					$('.transitor').hide();
-					cssAnimations.init();
+          if (Modernizr.touch){
+
+          }
+          else{
+            cssAnimations.init();
+
+          }
 				}, 1000);
 			}, 2000);
 		}
