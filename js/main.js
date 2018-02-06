@@ -91,7 +91,13 @@ var cssAnimations = (function() {
     init: initiate
   };
 })();
-cssAnimations.init();
+if (Modernizr.touch){
+
+}
+else{
+  cssAnimations.init();
+
+}
 
 $('.hamburguer').click(function() {
 	$('nav').fadeToggle(600);
