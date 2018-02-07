@@ -5,7 +5,7 @@ project_year: 2016
 img: /img/underthesea.jpg
 ---
 
-<link rel="stylesheet" href="/css/progressjs.css" media="screen">
+<link rel="stylesheet" href="/css/progress.css" media="screen">
 
 <script src="/js/game.js"></script>
 
