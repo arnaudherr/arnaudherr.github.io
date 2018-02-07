@@ -175,6 +175,9 @@ $('nav ul li a').click(function(e) {
 loadContent(url)
 });
 function loadContent(url){
+  var currentLocation = window.location;
+
+  if (url!=currentLocation)
   $('.transitor').show();
   var tmax_opts = {
     delay: 0,
