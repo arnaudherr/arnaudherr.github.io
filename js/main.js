@@ -1,15 +1,21 @@
 $(document).ready(function() {
-  $('body').mousemove(function (e) {
+  if (Modernizr.touch){
+    //
+  }
+  else {
+    $('body').mousemove(function (e) {
 
-      $('.cursor').animate({
-          'left': e.pageX + -18  + 'px',
-          'top': e.pageY  + -18 + 'px'
-      }, 0);
+        $('.cursor').animate({
+            'left': e.pageX + -18  + 'px',
+            'top': e.pageY  + -18 + 'px'
+        }, 0);
 
+    });
+    $('a').hover(function() {
+    $( ".cursor" ).toggleClass('big_cursor')
   });
-  $('a').hover(function() {
-  $( ".cursor" ).toggleClass('big_cursor')
-});
+  }
+
   var tmax_opts = {
     delay: 0,
     repeat: 0,
