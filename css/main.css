@@ -1,6 +1,5 @@
 
 /*TYPE STYLING*/
-@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 
 body {
@@ -11,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
     border: solid 9px #00ffc9;
     box-sizing: border-box;
     -webkit-transition: all .4s ease-in-out;
@@ -32,7 +31,7 @@ body {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.019), 0 6px 6px rgba(0, 0, 0, 0.023);
 }
 h1,h2,h3,h4,p,a,span{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: bolder;
 }
 a {
@@ -113,7 +112,7 @@ transition: 1s opacity;
     font-size: 48px;
     font-size: 3rem;
     font-weight: 400;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: bolder;
     letter-spacing: -4px;
 }
@@ -344,7 +343,7 @@ nav ul li a:hover:before {
         text-decoration: none;
         color: #4A4A4A;
         text-transform: uppercase;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Arial', sans-serif;
         font-size: 14px;
         margin-top: 4em;
     }
@@ -973,7 +972,7 @@ polygon {
   font-size: 48px;
   font-size: 3rem;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 800;
   letter-spacing: -4px;
 
@@ -1038,14 +1037,14 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   width: 50%;
   margin: 0 auto;
   margin-top:2em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 100;
   font-size: 20px;
   padding-bottom: 2em;
 }
 .project__container p {
   margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 100;
   font-size: 20px;
   color: white;
@@ -1219,14 +1218,12 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   letter-spacing: 4px;
   text-align: center;
   color: #2E3B4B;
-text-shadow: -10px 10px 0px #00fcc6, -20px 20px 0px #fafafa, -30px 30px 0px #FD88BB;
 }
 
 .experience__container ul{
   margin: 0;
   padding: 0;
   margin-top:4em;
-  padding: 1em;
   box-sizing: border-box;
 }
 .experience__liste{
@@ -1410,7 +1407,7 @@ text-shadow: -10px 10px 0px #00fcc6, -20px 20px 0px #fafafa, -30px 30px 0px #FD8
    display: block;
    text-align: center;
    font-size: 9px;
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Arial', sans-serif;
    font-weight: lighter;
    margin-bottom: 3em;
    margin-top: 3em;
@@ -1423,7 +1420,7 @@ text-shadow: -10px 10px 0px #00fcc6, -20px 20px 0px #fafafa, -30px 30px 0px #FD8
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: lighter;
   color: #2E3B4B;
 }
@@ -1442,7 +1439,7 @@ text-shadow: -10px 10px 0px #00fcc6, -20px 20px 0px #fafafa, -30px 30px 0px #FD8
   padding: 1em;
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 .container__cv--left img {
   margin-top: 4em;
@@ -1580,7 +1577,7 @@ text-align: center;
   padding: 8em 0 8em 5%;
   box-sizing: border-box;
   color: #FAFAFA;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Arial',sans-serif;
   -webkit-box-align: center;
       -ms-flex-align: center;
               -ms-grid-row-align: center;
@@ -1600,7 +1597,7 @@ text-align: center;
   font-size: 48px;
   font-size: 3rem;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 800;
   letter-spacing: -4px;
 }
@@ -1608,14 +1605,14 @@ text-align: center;
 .footer__container--left a{
 
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 
 .footer__container--right{
 
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   -webkit-box-align: center;
       -ms-flex-align: center;
               -ms-grid-row-align: center;
