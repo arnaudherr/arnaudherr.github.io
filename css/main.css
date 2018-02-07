@@ -1,6 +1,6 @@
 
 /*TYPE STYLING*/
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 
 body {
@@ -10,7 +10,8 @@ body {
     background-color: #FAFAFA;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
     border: solid 9px #00ffc9;
     box-sizing: border-box;
     -webkit-transition: all .4s ease-in-out;
@@ -19,9 +20,28 @@ body {
     cursor: -webkit-image-set(url("/img/cursor.png") 1x, url("/img/cursor.png") 2x) 3 3,pointer !important;
 
 }
+
+.cursor{
+  width: 40px;
+  height: 40px;
+  background: rgba(0,255,201,0.1);
+  border-radius: 40px;
+  position: absolute;
+  transition: top .02s ease-out,left .02s ease-out, transform .4s ease-in-out, background .4s ease-in-out;
+  z-index: -1;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.019), 0 6px 6px rgba(0, 0, 0, 0.023);
+}
+h1,h2,h3,h4,p,a,span{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+}
 a {
   cursor: url("/img/cursor.png") 3 3,auto !important;
   cursor: -webkit-image-set(url("/img/cursor.png") 1x, url("/img/cursor.png") 2x) 3 3,pointer !important;
+}
+.big_cursor{
+  transform: scale(3);
+  background: rgba(0,255,201,0.3);
 }
 video {
     position: absolute;
@@ -93,7 +113,7 @@ transition: 1s opacity;
     font-size: 48px;
     font-size: 3rem;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     letter-spacing: -4px;
 }
@@ -324,7 +344,7 @@ nav ul li a:hover:before {
         text-decoration: none;
         color: #4A4A4A;
         text-transform: uppercase;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 14px;
         margin-top: 4em;
     }
@@ -366,14 +386,14 @@ svg {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 .anime_waveFull {
-    -webkit-animation: showFromLeft .4s  .2s ease-in-out forwards;
-            animation: showFromLeft .4s .2s ease-in-out forwards;
+    -webkit-animation: showFromLeft .4s  .5s ease-in-out forwards;
+            animation: showFromLeft .4s .5s ease-in-out forwards;
 }
 #wave_border {
     stroke-dasharray: 100000;
     stroke-dashoffset: 100000;
-    -webkit-animation: dash 10s ease-in-out forwards;
-            animation: dash 10s ease-in-out forwards;
+    -webkit-animation: dash 10s 1s ease-in-out forwards;
+            animation: dash 10s 1s ease-in-out forwards;
 }
 @-webkit-keyframes showFromLeft {
     to {
@@ -525,12 +545,17 @@ svg {
 
     overflow: hidden;
     margin-top: 3em;
-    padding: 10em 0;
+    padding-top: 10em;
 }
 
 .project li {
   width: 100%;
   max-width: 33.333%;
+  transition: all .2s ease-in-out;
+}
+.project li:hover {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
 }
 .project a {
   text-decoration: none;
@@ -611,6 +636,7 @@ svg {
   background-size: 100%;
   background-repeat: no-repeat;
   margin-top: 8em;
+  padding-bottom: 4em;
 }
 
 .profil_pic {
@@ -921,7 +947,7 @@ polygon {
   font-size: 48px;
   font-size: 3rem;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   letter-spacing: -4px;
 
@@ -986,14 +1012,14 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   width: 50%;
   margin: 0 auto;
   margin-top:2em;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 100;
   font-size: 20px;
   padding-bottom: 2em;
 }
 .project__container p {
   margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 100;
   font-size: 20px;
   color: white;
@@ -1040,11 +1066,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 
-.project li:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-  z-index: 2;
-}
+
 
 .transitor {
   width: 100%;
@@ -1053,12 +1075,15 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   z-index: 99999;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  display: none;
   top: 0;
   left: 0;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 
+}
+.transitor polygon{
+  display: block;
+  opacity: 1;
 }
 .transitor svg {
   position: relative;
@@ -1069,8 +1094,6 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   stroke-width:8;
   width: 100%;
   height: auto;
-  left: 0;
-  top: 0;
   -webkit-transform-origin: center;
           transform-origin: center;
   -webkit-transform: scale(1);
@@ -1133,16 +1156,31 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 .experience__container{
   margin: 0 auto;
   margin-top:4em;
+  z-index: 999;
+
   padding: 1em;
   box-sizing: border-box;
   text-align: center;
   margin: 0 auto;
   text-align: center;
   color: #2E3B4B;
-  background: #FAFAFA;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
+}
+.lab__container{
+  width: 100%;
+  background: url(/img/background__lab.svg);
+  background-position: 0px 0px;
+  	background-repeat: repeat;
 
+  	animation: animatedBackground 3s linear infinite alternate;
+
+
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; background-size: 100%;}
+	to { background-position: 10% 10%; background-size: 90%; }
 }
 
 .experience__container h1{
@@ -1350,7 +1388,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
    display: block;
    text-align: center;
    font-size: 9px;
-   font-family: 'Roboto', sans-serif;
+   font-family: 'Poppins', sans-serif;
    font-weight: lighter;
    margin-bottom: 3em;
    margin-top: 3em;
@@ -1363,7 +1401,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: lighter;
   color: #2E3B4B;
 }
@@ -1382,7 +1420,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   padding: 1em;
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .container__cv--left img {
   margin-top: 4em;
@@ -1520,7 +1558,7 @@ text-align: center;
   padding: 8em 0 8em 5%;
   box-sizing: border-box;
   color: #FAFAFA;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Poppins',sans-serif;
   -webkit-box-align: center;
       -ms-flex-align: center;
               -ms-grid-row-align: center;
@@ -1540,7 +1578,7 @@ text-align: center;
   font-size: 48px;
   font-size: 3rem;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   letter-spacing: -4px;
 }
@@ -1548,14 +1586,14 @@ text-align: center;
 .footer__container--left a{
 
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 
 .footer__container--right{
 
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-box-align: center;
       -ms-flex-align: center;
               -ms-grid-row-align: center;
@@ -1860,7 +1898,21 @@ text-align: center;
 
 }
 
+#canvas{
+    margin:0 auto;
+    display:block;
+    filter:url('#shadowed-goo');
+    position: fixed;
+    z-index: -1;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
 
+.blur{
+  display:none;
+}
 
 /**ANIMATION**/
 

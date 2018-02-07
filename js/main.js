@@ -1,3 +1,54 @@
+$(document).ready(function() {
+  $('body').mousemove(function (e) {
+
+      $('.cursor').animate({
+          'left': e.pageX + -18  + 'px',
+          'top': e.pageY  + -18 + 'px'
+      }, 0);
+
+  });
+  $('a').hover(function() {
+  $( ".cursor" ).toggleClass('big_cursor')
+});
+  var tmax_opts = {
+    delay: 0,
+    repeat: 0,
+    repeatDelay: 0,
+    yoyo: false
+  };
+  var tmax_tl = new TimelineMax(tmax_opts),
+    polylion_shapes = $('.transit > polygon'),
+    polylion_stagger = 0.00475,
+    polylion_duration = 1.8;
+  var polylion_staggerFrom = {
+    scale: 1,
+    opacity: 1,
+    transformOrigin: 'center center',
+  };
+  var polylion_staggerTo = {
+    opacity: 0,
+    scale: 0,
+    ease: Elastic.easeInOut
+  };
+  tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
+  animeWhale()
+  setTimeout(function () {
+    $('.transitor').hide();
+  }, 1100);
+  setTimeout(function () {
+    if (Modernizr.touch){
+
+    }
+    else{
+      cssAnimations.init();
+
+    }
+  }, 800);
+})
+
+
+
+
 var cssAnimations = (function() {
   'use strict';
   var scrollInterval,
@@ -91,13 +142,6 @@ var cssAnimations = (function() {
     init: initiate
   };
 })();
-if (Modernizr.touch){
-
-}
-else{
-  cssAnimations.init();
-
-}
 
 $('.hamburguer').click(function() {
 	$('nav').fadeToggle(600);
@@ -109,9 +153,10 @@ $('.hamburguer').click(function() {
 		}, i * 100);
 	});
 })
-$('nav ul li a').click(function() {
+/*******/
+$('nav ul li a').click(function(e) {
+  e.preventDefault()
 	var url = $(this).attr("href")
-	console.log(url);
 	$('nav').fadeToggle(600);
 	$('.hamburguer span').toggleClass('showBurger')
 	$('nav ul li').each(function(i) {
@@ -120,93 +165,49 @@ $('nav ul li a').click(function() {
 			elm.toggleClass('show_nav');
 		}, i * 100);
 	});
-	$('html, body').animate({
-		scrollTop: $(url).offset().top
-	}, 800);
+loadContent(url)
 });
+function loadContent(url){
+  $('.transitor').show();
+  var tmax_opts = {
+    delay: 0,
+    repeat: 0,
+    repeatDelay: 0,
+    yoyo: false
+  };
+  var tmax_tl = new TimelineMax(tmax_opts),
+    polylion_shapes = $('.transit > polygon'),
+    polylion_stagger = 0.00475,
+    polylion_duration = 1.8;
+  var polylion_staggerFrom = {
+    scale: 0,
+    opacity: 0,
+    transformOrigin: 'center center',
+  };
+  var polylion_staggerTo = {
+    opacity: 1,
+    scale: 1,
+    ease: Elastic.easeInOut
+  };
+  tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
 
-function loadDynamic(url) {
-	$.ajax({
-		url: url,
-		type: 'GET',
-		dataType: 'html',
-		success: function(data) {
-			$('.transitor').show();
-			$('body').children().not('.transitor').delay(400).fadeOut(800);
-			var tmax_opts = {
-				delay: 0,
-				repeat: 0,
-				repeatDelay: 0,
-				yoyo: false
-			};
-			var tmax_tl = new TimelineMax(tmax_opts),
-				polylion_shapes = $('.transit > polygon'),
-				polylion_stagger = 0.00475,
-				polylion_duration = 1.8;
-			var polylion_staggerFrom = {
-				scale: 0,
-				opacity: 0,
-				transformOrigin: 'center center',
-			};
-			var polylion_staggerTo = {
-				opacity: 1,
-				scale: 1,
-				ease: Elastic.easeInOut
-			};
-			tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
-			history.replaceState('data to be passed', 'Title of the page', url);
-			setTimeout(function() {
-				$('body').children().not('.transitor').remove();
-				window.scrollTo(0, 0);
-				$('body').append(data);
-				$('.project li a').click(function(e) {
-					e.preventDefault();
-					var url = $(this).attr("href");
-					loadDynamic(url)
-				})
-				var tmax_opts = {
-					delay: 0,
-					repeat: 0,
-					repeatDelay: 0,
-					yoyo: false
-				};
-				var tmax_tl = new TimelineMax(tmax_opts),
-					polylion_shapes = $('.transit > polygon'),
-					polylion_stagger = 0.00475,
-					polylion_duration = 1.8;
-				var polylion_staggerFrom = {
-					scale: 1,
-					opacity: 1,
-					transformOrigin: 'center center',
-				};
-				var polylion_staggerTo = {
-					opacity: 0,
-					scale: 0,
-					ease: Elastic.easeInOut
-				};
-				tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
-				setTimeout(function() {
-					$('.transitor').hide();
-          if (Modernizr.touch){
+  setTimeout(function () {
+    window.location.href = url;
 
-          }
-          else{
-            cssAnimations.init();
+  }, 1800);
 
-          }
-				}, 1000);
-			}, 2000);
-		}
-	})
 }
-$('.project li a').click(function(e) {
+$('a').click(function(e) {
 	e.preventDefault();
 	var url = $(this).attr("href");
-	loadDynamic(url)
+  loadContent(url)
 })
 $(document).ready(function() {
-	var tmax_opts = {
-		delay: 0,
+
+})
+function animeWhale(){
+  var tmax_opts = {
+		delay: .3,
 		repeat: 0,
 		repeatDelay: 0.5,
 		yoyo: false
@@ -227,100 +228,16 @@ $(document).ready(function() {
 	};
 	tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
 	var polylion_shapes = $('svg.polylion > g polygon');
-	$('svg.polylion').click(function() {
-		var tmax_opts = {
-			delay: 0,
-			repeat: 0,
-			repeatDelay: 0,
-			yoyo: false
-		};
-		var tmax_tl = new TimelineMax(tmax_opts),
-			polylion_shapes = $('svg.polylion > g polygon'),
-			polylion_stagger = 0.00475,
-			polylion_duration = 1.1;
-		var polylion_staggerFrom = {
-			scale: 1,
-			opacity: 1,
-			transformOrigin: 'center center',
-		};
-		var polylion_staggerTo = {
-			opacity: 0,
-			scale: 0,
-			ease: Elastic.easeInOut
-		};
-		tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
-		setTimeout(function() {
-			$('body').css('background-color', '#00ffc9');
-			$('.transitor').show();
-			setTimeout(function() {
-				$('body').children().not('.transitor').remove();
-				setTimeout(function() {
-					$.ajax({
-						url: "/experience.html",
-						success: function(data) {
-							$('.loader').remove();
-							$('body').css('background-color', '#FAFAFA');
-							history.replaceState('data to be passed', 'Title of the page', '/experience');
-							$("body").append(data);
-							var tmax_opts = {
-								delay: 0,
-								repeat: 0,
-								repeatDelay: 0,
-								yoyo: false
-							};
-							var tmax_tl = new TimelineMax(tmax_opts),
-								polylion_shapes = $('.transit > polygon'),
-								polylion_stagger = 0.00475,
-								polylion_duration = 1.8;
-							var polylion_staggerFrom = {
-								scale: 1,
-								opacity: 1,
-								transformOrigin: 'center center',
-							};
-							var polylion_staggerTo = {
-								opacity: 0,
-								scale: 0,
-								ease: Elastic.easeInOut
-							};
-							tmax_tl.staggerFromTo(polylion_shapes, polylion_duration, polylion_staggerFrom, polylion_staggerTo, polylion_stagger, 0);
-							setTimeout(function() {
-								$('.transitor').hide();
-								$('body').delay(200).fadeIn(800);
-							}, 800);
-							window.scrollTo(0, 0);
-						}
-					});
-				}, 100);
-			}, 600);
-			var array = [];
-			callToSoundCloud()
+  setTimeout(function () {
+    anime({
+  		targets: [document.getElementById("wave_full")],
+  		d: "M886.702432,50.6148196 C749.207204,68.2447576 659.835306,-8.15164554 595.212549,69.7139191 C530.589792,147.579484 434.343133,226.914196 376.595137,226.9142 C318.847141,226.914203 228.100291,174.024382 185.476771,218.099231 C142.85325,262.174079 21.8574502,337.101309 58.981161,410.559387 C96.1048719,484.017465 126.353832,575.105471 233.6001,539.845599 C340.846368,504.585726 443.967799,350.323766 530.589804,350.323769 C617.211809,350.323772 687.33434,310.656402 735.457681,254.828268 C783.581023,199.000135 888.077384,191.654324 888.077384,191.654324",
+  		duration: 800,
+  		loop: false,
+  		easing: "easeInOutSine"
+  	});
+  }, 100);
 
-			function callToSoundCloud() {
-				setInterval(function() {
-					for (var i = 0; i < array.length; i++) {
-						array[i].pause(); // Stop playing
-						array[i].currentTime = 0
-						array[i].play();
-						$('.progress').addClass('launch');
-						$('.button').removeClass('waiting');
-						$('.active').addClass('reading');
-						$('.button .active').each(function() {
-							$(this).find('*').addClass('reading');
-						});
-					}
-				}, 8350);
-			}
-		}, 1100);
-	});
-})
-$(document).ready(function() {
-	anime({
-		targets: [document.getElementById("wave_full")],
-		d: "M886.702432,50.6148196 C749.207204,68.2447576 659.835306,-8.15164554 595.212549,69.7139191 C530.589792,147.579484 434.343133,226.914196 376.595137,226.9142 C318.847141,226.914203 228.100291,174.024382 185.476771,218.099231 C142.85325,262.174079 21.8574502,337.101309 58.981161,410.559387 C96.1048719,484.017465 126.353832,575.105471 233.6001,539.845599 C340.846368,504.585726 443.967799,350.323766 530.589804,350.323769 C617.211809,350.323772 687.33434,310.656402 735.457681,254.828268 C783.581023,199.000135 888.077384,191.654324 888.077384,191.654324",
-		duration: 800,
-		loop: false,
-		easing: "easeInOutSine"
-	});
 	setTimeout(function() {
 		anime({
 			targets: [document.getElementById("wave_full")],
@@ -339,4 +256,4 @@ $(document).ready(function() {
 			easing: "linear"
 		});
 	}, 1000);
-})
+}

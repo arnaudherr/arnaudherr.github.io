@@ -42,7 +42,7 @@ collections:
     permalink: /:title/
   posts:
     output: true
-    permalink: /:title/
+    permalink: projects/:title/
   paperstripexperience:
       output: true
       permalink: /:title/

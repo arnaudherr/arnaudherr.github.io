@@ -86,10 +86,7 @@ var circleEnemie;
 var perdu='LOOSER !';
 var end;
 
-loading=function()
-{
 
-}
 
 
 window.onload = function( )
@@ -111,7 +108,7 @@ window.onload = function( )
 	imageBackground= document.getElementById("background");
   the_back=document.getElementById("the_back");
 	os=document.getElementById("os");
-	catBall=document.getElementById("catball");
+	catBall=document.getElementById("os");
 
 	effectrire=document.querySelector('#effectrire');
 	end=document.querySelector('#end');
