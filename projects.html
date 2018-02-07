@@ -137,8 +137,14 @@ class Application {
     loop() {
         this.update();
         this.render();
+        if (Modernizr.touch){
+          this.numberOfCircles = 20;
 
-        window.requestAnimationFrame(() => this.loop());
+        }
+        else{
+          window.requestAnimationFrame(() => this.loop());
+
+        }
     }
 }
 
@@ -155,10 +161,13 @@ class CircleContainer {
     constructor(context, x, y) {
         this.context = context;
         this.position = {x, y};
-
-        this.numberOfCircles = 5;
+        if (Modernizr.touch){
+          this.numberOfCircles = 20;
+        }
+        else {
+          this.numberOfCircles = 5;
+        }
         this.circles = [];
-
         this.baseRadius = 20;
         this.bounceRadius = 150;
         this.singleSlice = TWO_PI / this.numberOfCircles;
