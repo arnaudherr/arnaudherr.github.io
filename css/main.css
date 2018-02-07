@@ -1069,7 +1069,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
 
 .transitor {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 99999;
@@ -1086,13 +1086,12 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   opacity: 1;
 }
 .transitor svg {
-  position: relative;
-  width:100%;
- height: auto;
+  position: fixed;
+  width:100vw;
+  height: 100vh;
   left: 0;
   top:0;
   stroke-width:8;
-  width: 100%;
   height: auto;
   -webkit-transform-origin: center;
           transform-origin: center;
@@ -1103,19 +1102,17 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 @media all and (max-width:850px){
   .transitor svg {
     position: relative;
-    width:100%;
+    width:auto;
    height: auto;
     left: 0;
     top:0;
     stroke-width:8;
-    width: 100%;
-    height: auto;
+    height: 100vh;
     left: 0;
     top: 0;
     -webkit-transform-origin: center;
             transform-origin: center;
-    -webkit-transform: scale(5);
-            transform: scale(5);
+
   }
 }
 
@@ -1173,14 +1170,14 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-position: 0px 0px;
   	background-repeat: repeat;
 
-  	animation: animatedBackground 3s linear infinite alternate;
+  	animation: animatedBackground 10s linear infinite alternate;
 
 
 }
 
 @keyframes animatedBackground {
 	from { background-position: 0 0; background-size: 100%;}
-	to { background-position: 10% 10%; background-size: 90%; }
+	to { background-position: 20% 20%; background-size: 80%; }
 }
 
 .experience__container h1{
