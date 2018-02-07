@@ -176,7 +176,7 @@ loadContent(url)
 });
 function loadContent(url){
   var currentLocation = window.location;
-
+  alert(url +' '+ currentLocation )
   if (url!=currentLocation){
 
 
