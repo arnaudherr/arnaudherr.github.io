@@ -6,6 +6,7 @@ page_title: Projects
   <canvas id="canvas">Your browser doesn't support canvas</canvas>
 
   <h1>Projects</h1>
+  <span class="scroll"></span>
   {% assign sortedAllPost = site.posts | sort:"date" %}
   {% for item in sortedAllPost %}
   {%if forloop.first%}
@@ -281,7 +282,7 @@ page_title: Projects
       ctx = screen.ctx;
   screen.resize();
   // create LavaLamps
-  lava0 = new LavaLamp(screen.width, screen.height, 20, "#05E5B6 ", "#00FFC9");
+  lava0 = new LavaLamp(screen.width, screen.height, 10, "#2E3B4B ", "#00FFC9");
 
   run();
 

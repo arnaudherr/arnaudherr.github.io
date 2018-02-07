@@ -234,7 +234,7 @@ nav ul li{
   font-weight:800;
   letter-spacing: 10px;
   margin-bottom: 80px;
-  margin-bottom:5rem ;
+  margin-bottom:3rem ;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   -webkit-transform: translateY(300px);
@@ -580,14 +580,16 @@ svg {
 
 .project img {
   width: 100%;
+  display: block;
 }
 
 .project p {
-  margin-top: -2em;
+  margin-top: -3em;
   font-size: 16px;
   font-size: 1rem;
   color: white;
   font-weight: 800;
+  line-height: 0;
 }
 @media all and (max-width: 850px) {
   .project{
@@ -1207,14 +1209,14 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 .experience__container h1{
 
   font-weight: 800;
-  font-size: 15vw;
+  font-size: 13vw;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
+  padding-top: 1em;
   margin-bottom:1em;
-  margin-top: 1em;
   vertical-align: center;
-  line-height: 0;
+  line-height: 2;
   letter-spacing: 4px;
   text-align: center;
   color: #2E3B4B;
@@ -1225,6 +1227,9 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   padding: 0;
   margin-top:4em;
   box-sizing: border-box;
+}
+.experience__container ul li img{
+  display: block;
 }
 .experience__liste{
   list-style: none;
@@ -2218,3 +2223,63 @@ zoom in
   -webkit-animation-name: zoomIn;
           animation-name: zoomIn;
 }
+
+.scroll{
+  position: absolute;
+  top: 40vw;
+  left: 50%;
+  width: 30px;
+  height: 50px;
+  margin-left: -15px;
+  border: 2px solid #2E3B4B;
+  border-radius: 50px;
+  box-sizing: border-box;
+  }
+
+  .scroll::before{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #2E3B4B;
+    border-radius: 100%;
+    -webkit-animation: sdb10 2s infinite;
+    animation: sdb10 2s infinite;
+    box-sizing: border-box;
+  }
+
+  @-webkit-keyframes sdb10 {
+    0% {
+      -webkit-transform: translate(0, 0);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      -webkit-transform: translate(0, 20px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes sdb10 {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      transform: translate(0, 20px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
