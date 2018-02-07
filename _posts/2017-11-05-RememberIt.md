@@ -1,5 +1,5 @@
 ---
-layout: experience_temp
+layout: default
 name: Remember it
 project_year: 2016
 img: /img/rememberit.jpg

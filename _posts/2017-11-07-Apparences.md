@@ -1,5 +1,5 @@
 ---
-layout: experience_temp
+layout: default
 name: Apparences magazine
 project_year: 2017
 img: /img/polysea.jpg

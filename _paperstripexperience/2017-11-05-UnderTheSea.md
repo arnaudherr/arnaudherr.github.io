@@ -1,5 +1,5 @@
 ---
-layout: experience_temp
+layout: default
 title: Under the sea
 project_year: 2016
 img: /img/underthesea.jpg

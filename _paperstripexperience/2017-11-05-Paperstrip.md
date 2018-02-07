@@ -1,5 +1,5 @@
 ---
-layout: experience_temp
+layout: default
 title: Paperstrip
 project_year: 2016
 img: /img/paperstrip.jpg

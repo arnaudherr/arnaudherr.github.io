@@ -1,5 +1,5 @@
 ---
-layout: experience_temp
+layout: default
 title: Jeune CDH
 project_year: 2018
 img: /img/slideshow.gif
