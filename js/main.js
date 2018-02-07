@@ -175,8 +175,7 @@ $('nav ul li a').click(function(e) {
 loadContent(url)
 });
 function loadContent(url){
-  var currentLocation = window.location;
-  alert(url +' '+ currentLocation )
+  var currentLocation = window.location.pathname;;
   if (url!=currentLocation){
 
 
