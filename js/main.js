@@ -177,7 +177,9 @@ loadContent(url)
 function loadContent(url){
   var currentLocation = window.location;
 
-  if (url!=currentLocation)
+  if (url!=currentLocation){
+
+
   $('.transitor').show();
   var tmax_opts = {
     delay: 0,
@@ -206,6 +208,7 @@ function loadContent(url){
 
   }, 1800);
 
+}
 }
 $('a').click(function(e) {
 	e.preventDefault();
