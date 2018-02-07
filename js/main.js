@@ -43,6 +43,7 @@ $(document).ready(function() {
   }, 1100);
   setTimeout(function () {
     if (Modernizr.touch){
+      cssAnimations.init();
 
     }
     else{
