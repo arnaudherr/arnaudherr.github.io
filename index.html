@@ -30,7 +30,7 @@ page_title: Home
          <h1>WEB DESIGNER<span>/</span>WEB DEVELOPER</h1>
          <div class="flex__parent about__design margin-top clearfix ">
             <div class="about__title rotate" data-animation="animated" data-animation-type="slidefrombottom">
-               <h2>Hello world</h2>
+               <h1>Hello world</h1>
                <p>
 Moi c'est Arnaud Herr, je suis un Web designer & developer fraichement sorti des études. J'aime élaborer des designs élégants, dans l'air du temps, ainsi que les développer.</p>
                 <a href="/about"><button class="btn btn-1 btn-1c">Lire plus</button></a>
@@ -42,7 +42,7 @@ Moi c'est Arnaud Herr, je suis un Web designer & developer fraichement sorti des
          </div>
          <div class=" big__container clearfix ">
            <a href="/projects"><img class="project__title" src="img/project.png" alt="Projects"></a>
-           {% assign sortedAllPost = site.posts | sort:"date"%}
+           {% assign sortedAllPost = (site.posts | sort: 'date') | reverse %}
            {% for item in sortedAllPost limit:3 %}
            {%if forloop.first%}
            <ul class="project" id="project">
@@ -54,6 +54,22 @@ Moi c'est Arnaud Herr, je suis un Web designer & developer fraichement sorti des
            {%endif%}
            {% endfor %}
            <a href="/projects"><button class="btn btn-1 btn-1c">Voir plus</button></a>
+
+         </div>
+         <div class=" container__lab bg clearfix ">
+           <a href="/lab"><img class="lab__title" src="img/lab.png" alt="Lab"></a>
+           {% assign sortedAllPost = (site.labprojects | sort: 'date') | reverse %}
+           {% for item in sortedAllPost limit:3 %}
+           {%if forloop.first%}
+           <ul class="project" id="project">
+              {%endif%}
+                <li data-animation="animated" data-animation-type="slidefrombottom" data-animation-delay="0.{{ forloop.index }}s"><a href="{{item.url}}"><img src="{{item.img}}"></a></li>
+
+              {%if forloop.last%}
+           </ul>
+           {%endif%}
+           {% endfor %}
+           <a href="/lab"><button class="btn btn-1 btn-1c">Voir plus</button></a>
 
          </div>
 </div>

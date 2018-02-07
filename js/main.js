@@ -1,8 +1,20 @@
 $(document).ready(function() {
+
+
   if (Modernizr.touch){
     //
   }
   else {
+    var movementStrength = 25;
+  var height = movementStrength / $(window).height();
+  var width = movementStrength / $(window).width();
+  $(".bg").mousemove(function(e){
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $('.bg').css("background-position", newvalueX+"px     "+newvalueY+"px");
+  });
     $('body').mousemove(function (e) {
 
         $('.cursor').animate({
@@ -176,8 +188,6 @@ loadContent(url)
 function loadContent(url){
   var currentLocation = window.location.pathname;;
   if (url!=currentLocation){
-
-
   $('.transitor').show();
   var tmax_opts = {
     delay: 0,

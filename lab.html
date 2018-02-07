@@ -3,8 +3,8 @@ layout: default
 page_title: Lab
 ---
 <div class="experience__container lab__container">
-  <h1>The Lab</h1>
-{% assign sortedAllLab = (site.labprojects | sort: 'date') | reverse % %}
+  <h1 class="style-zoom" data-title='The Lab'>The Lab</h1>
+{% assign sortedAllLab = (site.labprojects | sort: 'date') | reverse %}
            {% for item in sortedAllLab %}
            {%if forloop.first%}
            <ul class="project">
