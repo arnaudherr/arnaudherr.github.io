@@ -297,20 +297,20 @@ nav ul li a:after {
 
 
 nav ul li a:hover {
-  color: #FFFFFF;
+	color: #FFFFFF;
   -webkit-transform: scale(2);
           transform: scale(2);
 }
 
 
 nav ul li a:hover:after {
-  -webkit-transform: translate3d(100%,0,0);
-  transform: translate3d(100%,0,0);
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
 }
 
 
 nav ul li a:hover:before {
-  width: 100%;
+	width: 100%;
 }
 .show_nav{
   -webkit-transform: translateY(0);
@@ -1195,16 +1195,16 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   width: 100%;
   background: url(/img/background__lab.svg);
   background-position: 0px 0px;
-    background-repeat: repeat;
+  	background-repeat: repeat;
 
-    animation: animatedBackground 10s linear infinite alternate;
+  	animation: animatedBackground 10s linear infinite alternate;
 
 
 }
 
 @keyframes animatedBackground {
-  from { background-position: 0 0; background-size: 100%;}
-  to { background-position: 20% 20%; background-size: 80%; }
+	from { background-position: 0 0; background-size: 100%;}
+	to { background-position: 20% 20%; background-size: 80%; }
 }
 
 .experience__container h1{
@@ -1560,7 +1560,6 @@ text-align: center;
 
 footer{
   position: relative;
-  width: 100%;
   overflow: hidden;
 }
 .back_video{
