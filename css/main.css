@@ -1579,7 +1579,6 @@ footer{
   display: -ms-flexbox;
   display: flex;
   text-align: left;
-  mix-blend-mode: screen;
 
 }
 .copy{
@@ -1590,7 +1589,6 @@ footer{
   padding: 1em;
   color: white;
   padding-right: 10%;
-  mix-blend-mode: screen;
 }
 
 .footer__container--left{

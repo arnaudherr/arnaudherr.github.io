@@ -9,7 +9,7 @@ img: /img/rememberit.jpg
     <h1 data-animation="animated" data-animation-type="zoomin">Remember it</h1><p data-animation="animated" data-animation-type="zoomin" data-animation-delay="0.2s">Un moyen simple de créer des albums photos collaboratifs de vos souvenirs.</p>
 </div>
 <div class="project__container back_green">
-  <video autoplay loop id="video-background" muted plays-inline>
+  <video id="video-background" playsinline muted loop autoplay defaultMuted >
       <source src="http://rememberit.be/video/social.mp4" type="video/mp4">
       <source src="http://rememberit.be/video/social.ogv" type="video/ogv">
 
