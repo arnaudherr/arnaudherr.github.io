@@ -17,7 +17,7 @@ $('.container__button').append('<div class="sound"><p>Percu:</p><div class=" but
 $('.container__button').append('<div class="sound"><p>Kick:</p><div class=" button 2"><img src="/img/btn2.png"></div></div>')
 
 $('.container__button').append('<div class="sound"><p>Bass:</p><div class=" button 3"><img src="/img/btn3.png"></div></div>')
-$('.container__button').append('<div class="sound"><p>Stevie:</p><div class=" button 5"><img src="/img/btn1.png"></div></div>')
+
 
 
 $('body').append('<div class="logo_small"><img src="/img/small_whale.png"></div>');

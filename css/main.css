@@ -35,6 +35,7 @@ h1,h2,h3,h4,p,a,span{
   font-weight: bolder;
 }
 a {
+  color: #00ffc9;
   cursor: url("/img/cursor.png") 3 3,auto !important;
   cursor: -webkit-image-set(url("/img/cursor.png") 1x, url("/img/cursor.png") 2x) 3 3,pointer !important;
 }
@@ -296,20 +297,20 @@ nav ul li a:after {
 
 
 nav ul li a:hover {
-	color: #FFFFFF;
+  color: #FFFFFF;
   -webkit-transform: scale(2);
           transform: scale(2);
 }
 
 
 nav ul li a:hover:after {
-	-webkit-transform: translate3d(100%,0,0);
-	transform: translate3d(100%,0,0);
+  -webkit-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
 }
 
 
 nav ul li a:hover:before {
-	width: 100%;
+  width: 100%;
 }
 .show_nav{
   -webkit-transform: translateY(0);
@@ -1194,16 +1195,16 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   width: 100%;
   background: url(/img/background__lab.svg);
   background-position: 0px 0px;
-  	background-repeat: repeat;
+    background-repeat: repeat;
 
-  	animation: animatedBackground 10s linear infinite alternate;
+    animation: animatedBackground 10s linear infinite alternate;
 
 
 }
 
 @keyframes animatedBackground {
-	from { background-position: 0 0; background-size: 100%;}
-	to { background-position: 20% 20%; background-size: 80%; }
+  from { background-position: 0 0; background-size: 100%;}
+  to { background-position: 20% 20%; background-size: 80%; }
 }
 
 .experience__container h1{
@@ -1557,7 +1558,19 @@ padding: 0;
 text-align: center;
 }
 
+footer{
+  position: relative;
+}
+.back_video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform:translate(0,0);
+  object-fit: fill;
+  height: 100%;
+  min-height: auto;
 
+}
 .footer__container{
   width: 100%;
   background: #00ffc9;
@@ -1565,6 +1578,7 @@ text-align: center;
   display: -ms-flexbox;
   display: flex;
   text-align: left;
+  mix-blend-mode: screen;
 
 }
 .copy{
@@ -1575,6 +1589,7 @@ text-align: center;
   padding: 1em;
   color: white;
   padding-right: 10%;
+  mix-blend-mode: screen;
 }
 
 .footer__container--left{
@@ -1743,6 +1758,7 @@ text-align: center;
 .container__charte{
   padding: 1em;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .container__charte h1 {
@@ -1765,15 +1781,15 @@ text-align: center;
 }
 
 .container__charte p {
-  width: 100%;
-
     font-weight: 400;
-      font-size: 10px;
-      text-transform: uppercase;
-      line-height: 0;
-      letter-spacing: 4px;
-      color: #2E3B4B;
-      text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 0 auto;
+
+    margin-top:2em;
+    letter-spacing: 4px;
+    color: #2E3B4B;
+    width: 66.66%;
 }
 .container__charte svg {
   width: 50px;

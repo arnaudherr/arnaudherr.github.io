@@ -9,7 +9,7 @@ img: /img/slideshow.gif
 </style>
 <div class="container__charte">
 <h1 data-animation="animated" data-animation-type="slidefromtop">Jeunes CDH </h1>
-<p data-animation="animated" data-animation-type="slidefrombottom">Home page design</p>
+<p data-animation="animated" data-animation-type="slidefrombottom">Home page design réalisé dans l'agence namuroise <a href="https://www.kiffandco.be/" target="_blank">Kiff and Co</a>. Grâce à ce design nous avons remporté l'appel d'offre pour faire le nouveau site des <a href="https://www.jeunescdh.be/" target="_blank">Jeunes cdH</a> et par la suite celui des <a href="https://www.les-edh.be/" target="_blank">edH</a></p>
 <img src="/img/cdh_design_prop1.jpg" data-animation="animated" data-animation-type="slidefrombottom" >
 
 <div class="container__charte--color">
