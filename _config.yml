@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Arnaud Herr
 email: arnaudherr@hotmail.com
-description:  This is a description for my website
+description:  Freenlance web designer & developer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "arnaudherr.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 

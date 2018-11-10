@@ -5,6 +5,8 @@ $(document).ready(function() {
     //
   }
   else {
+    parallax();
+
     var movementStrength = 25;
   var height = movementStrength / $(window).height();
   var width = movementStrength / $(window).width();
@@ -277,4 +279,56 @@ function animeWhale(){
 			easing: "linear"
 		});
 	}, 1000);
+}
+
+
+/*
+To activate the parallax set parallax-container on parent and set parallax-item on each child...
+data-velocity = speed
+*/
+function parallax(){
+  $(window).scroll(function (event) {
+
+      var scroll = $(window).scrollTop();
+      // Do something
+      var $window = $(window);
+      var window_height = $window.height();
+      var window_top_position = $window.scrollTop();
+      var window_bottom_position = (window_top_position + window_height);
+      var $element_to_paralax = $(".parallax-container");
+      $.each($element_to_paralax, function() {
+      console.log($('.parallax-item').attr('data-velocity'));
+      var $element = $(this);
+      var element_height = $element.outerHeight();
+      var element_top_position = $element.offset().top;
+      var element_bottom_position = $element.offset().bottom;
+
+      var element_bottom_position = (element_top_position + element_height);
+
+      //check to see if this current container is within viewport
+
+      if ((element_bottom_position >= window_top_position) &&
+        (element_top_position <= window_bottom_position)) {
+          $.each($('.parallax-item'),function(){
+            $(this).addClass('parallax-it');
+            parallaxIt(window_top_position, $(this), $(this).attr('data-velocity'));
+          })
+
+
+      }
+    });
+
+  });
+
+
+}
+
+function parallaxIt(e, target, movement) {
+  var $this = $(".parallax-container");
+  var relY = e - $this.offset().top;
+  console.log('Yeaah');
+  TweenMax.to(target, 1, {
+    y: (relY - $this.height() / 2) / $this.height() * movement,
+
+  });
 }
